@@ -2,3 +2,20 @@ body {
     background: #eaeff2;
     font-family: 'Barlow Semi Condensed', sans-serif;
 }
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-color: #d7e6ee; */
+    background-color: #c2ddeb;
+}
+
+.logoInnerContainer {
+    width: max-content;
+    display: flex;
+    font-family: 'Parisienne', cursive;
+    font-size: larger;
+    color: whitesmoke;
+}
