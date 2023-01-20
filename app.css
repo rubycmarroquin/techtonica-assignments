@@ -37,3 +37,19 @@ body {
     height: auto;
     border-radius: 8px;
 }
+
+#image-of-recipe {
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#image-of-recipe:hover {
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+    box-shadow: 10px 10px 5px #888888;
+}
