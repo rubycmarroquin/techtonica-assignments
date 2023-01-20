@@ -19,3 +19,7 @@ body {
     font-size: larger;
     color: whitesmoke;
 }
+
+.recipe-title {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
