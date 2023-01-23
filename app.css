@@ -1,0 +1,119 @@
+body {
+    background: #eaeff2;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #c2ddeb;
+}
+
+.logoInnerContainer {
+    width: max-content;
+    display: flex;
+    font-family: 'Parisienne', cursive;
+    font-size: 25px;
+    color: whitesmoke;
+}
+
+#logoID {
+    color: white;
+    text-shadow: -1px 1px 0 #82c5e7,
+                  1px 1px 0 #82c5e7,
+                 1px -1px 0 #82c5e7,
+                -1px -1px 0 #82c5e7;
+}
+
+.recipe-title {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+#recipeTitle {
+    padding-top: 10px;
+    color: #0e1111;
+    font-size: 30px;
+}
+
+.intro { 
+    width: 49%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#image-of-recipe {
+    align-items: center;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+#image-of-recipe:hover {
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.recipe-image {
+    padding: 20px;
+    border-radius: 10px;
+    height: 100%;
+    flex:1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ingredients {
+    padding: 20px;
+    border-radius: 10px;
+    height: auto;
+    flex: 1;
+}
+
+.inner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 50%;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    width: 100%
+}
+
+#creditLink {
+    color: blue;
+}
+
+#creditLink:hover {
+    color: lightgrey;
+    cursor: pointer;
+}
+
+.checked {
+    text-decoration: line-through;
+    color: red;
+}
+
+/* Why doesn't this work? */
+/* input:checked {
+
+} */
