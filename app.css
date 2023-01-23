@@ -102,7 +102,18 @@ body {
 #creditLink {
     color: blue;
 }
+
 #creditLink:hover {
     color: lightgrey;
     cursor: pointer;
 }
+
+.checked {
+    text-decoration: line-through;
+    color: red;
+}
+
+/* Why doesn't this work? */
+/* input:checked {
+
+} */
