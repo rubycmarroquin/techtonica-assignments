@@ -1,7 +1,3 @@
-function handleCheckbox(event) {
-    console.log(event)
-}
-
 /**
  * Adds a checkbox element to a list of ingredients
  * @param {string} sectionId - the class name of the list we want to add check
@@ -29,8 +25,6 @@ function initSection(sectionId) {
         sectionList[i].removeChild(sectionList[i].firstChild);
         sectionList[i].appendChild(checkbox);
         sectionList[i].appendChild(label)
-        // sectionList[i].innerHTML = `<input type="checkbox" name="name[]" onChange="handleCheckbox()">${text}`;
-
     }
 }
 
