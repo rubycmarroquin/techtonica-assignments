@@ -24,12 +24,11 @@ function initSection(sectionId) {
         }
         sectionList[i].removeChild(sectionList[i].firstChild);
         sectionList[i].appendChild(checkbox);
-        sectionList[i].appendChild(label)
+        sectionList[i].appendChild(label);
     }
 }
 
 // Add check boxes to ingredients 
-initSection('cake')
-initSection('milkMixture')
-initSection('whipped')
-
+initSection('cake');
+initSection('milkMixture');
+initSection('whipped');
