@@ -59,3 +59,26 @@ function styleButton (button) {
     button.style.padding = "20px"
     button.style.backgroundColor = "teal";
 }
+
+// <!-- Footer-->
+// <div class="footerContainer">
+//     <footer>
+//         <a id="creditLink" href="https://tastesbetterfromscratch.com/tres-leches-cake/">Credit for Recipe</a>
+//     </footer>
+// </div>
+
+function addFooter() {
+    let body  = document.getElementsByTagName("body");
+    let div = document.createElement("div");
+    let footer = document.createElement("footer");
+    let link = document.createElement("a");
+    link.id = "creditLink";
+    link.href = "https://tastesbetterfromscratch.com/tres-leches-cake/";
+    link.textContent = "Credit for the Recipe";
+    div.className = "footerContainer";
+    footer.appendChild(link);
+    div.appendChild(footer);
+    body[0].appendChild(div);
+}
+
+addFooter();
