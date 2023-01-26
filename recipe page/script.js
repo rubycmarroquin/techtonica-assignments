@@ -74,7 +74,7 @@ buttonEventListener();
  * @param {button} button - button element that was clicked on
  */
 function styleButton (button) {
-    button.style.padding = "20px"
+    button.style.padding = "100px"
     button.style.backgroundColor = "teal";
     addFooter();
 }
