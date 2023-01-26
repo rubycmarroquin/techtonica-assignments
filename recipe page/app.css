@@ -113,6 +113,12 @@ body {
     color: red;
 }
 
+.buttons {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* Why doesn't this work? */
 /* input:checked {
 
