@@ -32,3 +32,30 @@ function initSection(sectionId) {
 initSection('cake');
 initSection('milkMixture');
 initSection('whipped');
+
+
+function addButton() {
+    let body  = document.getElementsByTagName("body");
+    let button = document.createElement("button");
+    button.type = "button";
+    button.className = "buttons";
+    button.innerHTML = "<strong>Hello</strong>";
+    body[0].appendChild(button);
+}
+
+// it adds a button but there is no text?
+addButton();
+
+function buttonEventListener () {
+    let buttons = document.getElementsByClassName("buttons");
+    for(let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", () => styleButton(buttons[i]));
+    }
+}
+
+buttonEventListener();
+
+function styleButton (button) {
+    button.style.padding = "15px"
+    button.style.backgroundColor = "teal";
+}
