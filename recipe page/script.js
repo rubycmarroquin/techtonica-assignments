@@ -3,7 +3,7 @@
  * @param {string} sectionId - the class name of the list we want to add check
  * boxes to 
  */
-function initSection(sectionId) {
+async function initSection(sectionId) {
     const sectionElement = document.getElementById(sectionId);
     const sectionList = Array.from(sectionElement.getElementsByTagName('li'));
     for(let i = 0; i < sectionList.length; i++) {
@@ -36,13 +36,22 @@ initSection('whipped');
 /**
  * Adds a button at the bottom of the HTML page 
  */
-function addButton() {
-    let body  = document.getElementsByTagName("body");
+async function addButton() {
+    // grab the div with the classname container
+    let div  = document.getElementsByClassName("container");
+    // create new div element for button 
+    let divsButton = document.createElement("div");
+    // add class name to new div element 
+    divsButton.className = "buttonsDiv";
+    // create new button element 
     let button = document.createElement("button");
     button.type = "button";
     button.className = "buttons";
-    button.innerHTML = "<strong>Hello</strong>";
-    body[0].appendChild(button);
+    button.innerHTML = "Press me for Creator";
+    // append to HTML page 
+    divsButton.appendChild(button);
+    div[0].appendChild(divsButton);
+
 }
 
 // it adds a button but there is no text?
@@ -51,7 +60,7 @@ addButton();
 /**
  * Adds an event listener to every button element in the HTML document
  */
-function buttonEventListener () {
+async function buttonEventListener () {
     let buttons = document.getElementsByClassName("buttons");
     for(let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", () => styleButton(buttons[i]));
@@ -67,6 +76,7 @@ buttonEventListener();
 function styleButton (button) {
     button.style.padding = "20px"
     button.style.backgroundColor = "teal";
+    addFooter();
 }
 
 /**
@@ -82,7 +92,7 @@ function styleButton (button) {
  * </div>
 
  */
-function addFooter() {
+async function addFooter() {
     let body  = document.getElementsByTagName("body");
     let div = document.createElement("div");
     let footer = document.createElement("footer");
@@ -95,5 +105,3 @@ function addFooter() {
     div.appendChild(footer);
     body[0].appendChild(div);
 }
-
-addFooter();
