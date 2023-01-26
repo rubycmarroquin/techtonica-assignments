@@ -33,7 +33,9 @@ initSection('cake');
 initSection('milkMixture');
 initSection('whipped');
 
-
+/**
+ * Adds a button at the bottom of the HTML page 
+ */
 function addButton() {
     let body  = document.getElementsByTagName("body");
     let button = document.createElement("button");
@@ -46,6 +48,9 @@ function addButton() {
 // it adds a button but there is no text?
 addButton();
 
+/**
+ * Adds an event listener to every button element in the HTML document
+ */
 function buttonEventListener () {
     let buttons = document.getElementsByClassName("buttons");
     for(let i = 0; i < buttons.length; i++) {
@@ -55,18 +60,28 @@ function buttonEventListener () {
 
 buttonEventListener();
 
+/**
+ * Changes the styling of the button
+ * @param {button} button - button element that was clicked on
+ */
 function styleButton (button) {
     button.style.padding = "20px"
     button.style.backgroundColor = "teal";
 }
 
-// <!-- Footer-->
-// <div class="footerContainer">
-//     <footer>
-//         <a id="creditLink" href="https://tastesbetterfromscratch.com/tres-leches-cake/">Credit for Recipe</a>
-//     </footer>
-// </div>
+/**
+ * Adds a footer to the end of the recipe page that includes 
+ * the link to the recipe credit
+ * 
+ * 
+ * <!-- Footer-->
+ * <div class="footerContainer">
+ *   <footer>
+ *     <a id="creditLink" href="https://tastesbetterfromscratch.com/tres-leches-cake/">Credit for Recipe</a>
+ *   </footer>
+ * </div>
 
+ */
 function addFooter() {
     let body  = document.getElementsByTagName("body");
     let div = document.createElement("div");
