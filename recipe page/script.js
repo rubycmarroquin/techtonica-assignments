@@ -56,6 +56,6 @@ function buttonEventListener () {
 buttonEventListener();
 
 function styleButton (button) {
-    button.style.padding = "15px"
+    button.style.padding = "20px"
     button.style.backgroundColor = "teal";
 }
