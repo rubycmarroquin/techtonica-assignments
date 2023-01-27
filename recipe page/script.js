@@ -9,15 +9,14 @@ async function initSection(sectionId) {
     for(let i = 0; i < sectionList.length; i++) {
         // store the ingredient text 
         const text = sectionList[i].textContent;
-        // create an input element 
+        // create an input element and label element 
         let checkbox = document.createElement("input");
-        // create a label input 
         let label = document.createElement("label");
         // add the innerHTML text to be the ingredient text 
         label.innerHTML = text;
         // add the type attribute of checbox to be a checkbox 
         checkbox.type = "checkbox";
-        // add the name attribute of checkbox to checkboxes 
+        // add the name to checkboxes 
         checkbox.name = "checkboxes";
         checkbox.onchange = function onCheckboxChange(e) {
             label.classList.toggle('checked');
@@ -54,9 +53,10 @@ async function addButton(text) {
 
 }
 
-// it adds a button but there is no text?
+// add buttons to the bottom of the page 
 addButton("Press me for Creator");
 addButton("Press me for More Recipes");
+addButton("Dark Mode");
 
 /**
  * Adds an event listener to every button element in the HTML document
@@ -74,6 +74,9 @@ buttonEventListener(buttons[0], styleCreditButton);
 //similar recipes 
 buttonEventListener(buttons[1], styleSimilarRecipesButton);
 
+// adds event listener for toggling dark mode 
+buttonEventListener(buttons[2], darkMode);
+
 /**
  * Changes the styling of the button
  * @param {button} button - button element that was clicked on
@@ -85,8 +88,10 @@ function styleCreditButton (button) {
     flag1 ? createFooter() : deleteFooter1();
     flag1 = !flag1;
 }
+
 /**
- * Deletes the first footer 
+ * Deletes the footer that is created from the "Press me for Creator"
+ * button 
  */
 function deleteFooter1() {
     let footerDiv = document.getElementById("footerContainer1");
@@ -104,12 +109,29 @@ function styleSimilarRecipesButton (button) {
     flag2 ? createSecondFooter() : deleteFooter2();
     flag2 = !flag2;
 }
+
 /**
- * Deletes the second footer
+ * Deletes the footer that is created from the "Press me for More Recipe"
+ * button 
  */
 function deleteFooter2() {
     let footerDiv = document.getElementById("footerContainer2");
     document.body.removeChild(footerDiv);
+}
+
+/**
+ * Allows to toggle between light and dark mode 
+ */
+var flag3 = true;
+function darkMode (button) {
+    // grabs the body element
+    var element = document.body;
+    // toggles the class of the body 
+    element.classList.toggle("dark-mode");
+    // undoes or does any changes when button is clicked 
+    button.style.backgroundColor = flag3 ? "red" : "";
+    flag3 ? button.textContent = "Light Mode" : button.textContent = "Dark Mode";
+    flag3 = !flag3;
 }
 
 /**
@@ -119,25 +141,19 @@ function deleteFooter2() {
 async function createFooter() {
     // get the body element 
     let body  = document.getElementsByTagName("body");
-    // create div element 
+    // create div, footer, and link elements 
     let div = document.createElement("div"); 
-    // create footer element 
     let footer = document.createElement("footer"); 
-    // create <a> element 
     let link = document.createElement("a");
-    // adds an id to the link 
+    // adds an id, reference, and text to link 
     link.id = "creditLink"; 
-    // link reference 
     link.href = "https://tastesbetterfromscratch.com/tres-leches-cake/";
-    // add text to the link 
     link.textContent = "Credit for the Recipe";
     // adds class name to the div element 
     div.id = "footerContainer1";
-    // add link to footer 
+    // append children to their parent elements
     footer.appendChild(link);
-    // add footer to div 
     div.appendChild(footer);
-    // add div to body
     body[0].appendChild(div);
 }
 
@@ -146,12 +162,12 @@ async function createFooter() {
  * button and is appended to a new div element. 
  */
 async function createSecondFooter() {
-    // get body element 
+    // add div to body
     let body  = document.getElementsByTagName("body")[0];
-    // create footer element 
+    // create footer and div elements 
     let footer = document.createElement("footer");
-    // create div element 
     let div = document.createElement("div");
+    
     // add class name to div element 
     div.id = "footerContainer2";
 

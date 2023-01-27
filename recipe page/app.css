@@ -37,7 +37,6 @@ body {
 
 #recipeTitle {
     padding-top: 10px;
-    color: #0e1111;
     font-size: 30px;
 }
 
@@ -189,3 +188,8 @@ footer {
       font-size:smaller;
     }
 }
+
+.dark-mode {
+    background-color: black;
+    color: white;
+  }
