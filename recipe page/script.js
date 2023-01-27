@@ -163,14 +163,17 @@ async function createSecondFooter() {
     // recipe 1: add links and change link name 
     recipe1.href = "https://www.jocooks.com/recipes/tiramisu-tres-leches-cake/";
     recipe1.textContent = "Tiramisu Tres Leches Cake";
+    recipe1.className = "recipeClass";
     
     // recipe 2: add links and change link name
     recipe2.href = "https://www.hummingbirdhigh.com/2020/05/coffee-tres-leches-cake.html";
     recipe2.textContent = "Coffee Tres Leches Cake";
+    recipe2.className = "recipeClass";
     
     // recipe 3: add links and change link name 
     recipe3.href = "https://www.onceuponachef.com/recipes/tres-leches-cake-with-dulce-de-leche-glaze.html";
     recipe3.textContent = "Tres Leches Cake with Dulce de Leche Glaze";
+    recipe3.className = "recipeClass";
 
     // add recipe elements to the footer element
     footer.appendChild(recipe1);
