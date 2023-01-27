@@ -81,6 +81,7 @@ buttonEventListener(buttons[1], styleSimilarRecipesButton);
 var flag1 = true;
 function styleCreditButton (button) {
     button.style.backgroundColor = flag1 ? "red" : "";
+    flag1 ? button.textContent = "Press Again to Undo" : button.textContent = "Press me for Creator";
     flag1 ? createFooter() : deleteFooter1();
     flag1 = !flag1;
 }
@@ -99,6 +100,7 @@ function deleteFooter1() {
 var flag2 = true;
 function styleSimilarRecipesButton (button) {
     button.style.backgroundColor = flag2 ? "red" : "";
+    flag2 ? button.textContent = "Press Again to Undo" : button.textContent = "Press me for More Recipes";
     flag2 ? createSecondFooter() : deleteFooter2();
     flag2 = !flag2;
 }
@@ -118,13 +120,13 @@ async function createFooter() {
     // get the body element 
     let body  = document.getElementsByTagName("body");
     // create div element 
-    let div = document.createElement("div");
+    let div = document.createElement("div"); 
     // create footer element 
-    let footer = document.createElement("footer");
+    let footer = document.createElement("footer"); 
     // create <a> element 
     let link = document.createElement("a");
     // adds an id to the link 
-    link.id = "creditLink";
+    link.id = "creditLink"; 
     // link reference 
     link.href = "https://tastesbetterfromscratch.com/tres-leches-cake/";
     // add text to the link 
@@ -159,16 +161,16 @@ async function createSecondFooter() {
     let recipe3 = document.createElement("a");
 
     // recipe 1: add links and change link name 
-    recipe1.href = "https://tastesbetterfromscratch.com/tres-leches-cake/";
-    recipe1.textContent = "Credit for the Recipe";
+    recipe1.href = "https://www.jocooks.com/recipes/tiramisu-tres-leches-cake/";
+    recipe1.textContent = "Tiramisu Tres Leches Cake";
     
     // recipe 2: add links and change link name
-    recipe2.href = "https://tastesbetterfromscratch.com/tres-leches-cake/";
-    recipe2.textContent = "Credit for the Recipe";
+    recipe2.href = "https://www.hummingbirdhigh.com/2020/05/coffee-tres-leches-cake.html";
+    recipe2.textContent = "Coffee Tres Leches Cake";
     
     // recipe 3: add links and change link name 
-    recipe3.href = "https://tastesbetterfromscratch.com/tres-leches-cake/";
-    recipe3.textContent = "Credit for the Recipe";
+    recipe3.href = "https://www.onceuponachef.com/recipes/tres-leches-cake-with-dulce-de-leche-glaze.html";
+    recipe3.textContent = "Tres Leches Cake with Dulce de Leche Glaze";
 
     // add recipe elements to the footer element
     footer.appendChild(recipe1);
