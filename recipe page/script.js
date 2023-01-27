@@ -78,18 +78,36 @@ buttonEventListener(buttons[1], styleSimilarRecipesButton);
  * Changes the styling of the button
  * @param {button} button - button element that was clicked on
  */
+var flag1 = true;
 function styleCreditButton (button) {
-    button.style.backgroundColor = "red";
-    createFooter();
+    button.style.backgroundColor = flag1 ? "red" : "";
+    flag1 ? createFooter() : deleteFooter1();
+    flag1 = !flag1;
+}
+/**
+ * Deletes the first footer 
+ */
+function deleteFooter1() {
+    let footerDiv = document.getElementById("footerContainer1");
+    document.body.removeChild(footerDiv);
 }
 
 /**
  * Changes the styling of the button
  * @param {button} button - button element that was clicked on
  */
+var flag2 = true;
 function styleSimilarRecipesButton (button) {
-    button.style.backgroundColor = "red";
-    createSecondFooter();
+    button.style.backgroundColor = flag2 ? "red" : "";
+    flag2 ? createSecondFooter() : deleteFooter2();
+    flag2 = !flag2;
+}
+/**
+ * Deletes the second footer
+ */
+function deleteFooter2() {
+    let footerDiv = document.getElementById("footerContainer2");
+    document.body.removeChild(footerDiv);
 }
 
 /**
@@ -112,7 +130,7 @@ async function createFooter() {
     // add text to the link 
     link.textContent = "Credit for the Recipe";
     // adds class name to the div element 
-    div.className = "footerContainer";
+    div.id = "footerContainer1";
     // add link to footer 
     footer.appendChild(link);
     // add footer to div 
@@ -133,7 +151,7 @@ async function createSecondFooter() {
     // create div element 
     let div = document.createElement("div");
     // add class name to div element 
-    div.className = "footerContainer";
+    div.id = "footerContainer2";
 
     // create link elements for each recipe 
     let recipe1 = document.createElement("a");
