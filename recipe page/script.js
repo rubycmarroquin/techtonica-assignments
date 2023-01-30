@@ -135,8 +135,8 @@ function darkMode (button) {
 }
 
 /**
- * Creates a second footer to the "Press me for More Recipes"
- * button and is appended to a new div element. 
+ * Creates a div and footer element for the "Press me for Creator"
+ * button and is appended to the bottom of the HTML page 
  */
 async function createFooter() {
     // get the body element 
@@ -158,8 +158,8 @@ async function createFooter() {
 }
 
 /**
- * Creates a second footer to the "Press me for More Recipes"
- * button and is appended to a new div element. 
+  * Creates a div and footer element for the "Press me More Recipes"
+ *  button and is appended to the bottom of the HTML page 
  */
 async function createSecondFooter() {
     // add div to body
