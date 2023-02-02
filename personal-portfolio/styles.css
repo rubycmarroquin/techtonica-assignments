@@ -1,8 +1,10 @@
+/* Centers contents of the main div */ 
 #main{
     vertical-align: middle;
     width:100%;
     text-align: center;
 }
+
 #main section {
     background-size: cover;
     height:100vh;
@@ -11,15 +13,17 @@
 }
 
 #navbar {
-    list-style-type: none;
+    display: flex;
+    justify-content: center;
     /* Removes the bullets */
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: white;
     font-family: 'Merriweather Sans', sans-serif;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
-
+/* Adds spacing between each of the types */ 
 header #navbar li {
     margin-left: 2.5rem;
 }
@@ -27,6 +31,7 @@ header #navbar li {
 li {
     float: left;
     font-family: 'Merriweather Sans', sans-serif;
+    list-style-type: none;
 }
 
 li a {
@@ -38,41 +43,20 @@ li a {
     font-family: 'Merriweather Sans', sans-serif;
 }
 
-/* Change the link color to #111 (black) on hover */
 li a:hover {
-    color: #50C878;
-    /* color: #046307; */
+    color: #44c56f;
     font-family: 'Merriweather Sans', sans-serif;
     text-decoration: underline;
     text-underline-offset: 10px;
 }
 
-.about {
-    background-color: orange;
+/* Center Icons */
+.social-media {
+    display: flex;
+    justify-content: center;
 }
 
-.section-name {
-    background-color: blue;
-}
-
-.section-content {
-    background-color: red;
-}
-
-.tag {
-    background-color: green;
-}
-
-.section-container {
-    background-color: purple;
-}
-
-.box {
-    background-color: pink;
-}
-body {
-    background-color: yellow;
-}
-li {
-    list-style-type: none;
+#home {
+    /* add padding to the top of the home section */ 
+    padding-top: 20px;
 }
