@@ -15,11 +15,8 @@
 #navbar {
     display: flex;
     justify-content: center;
-    /* Removes the bullets */
-    margin: 0;
-    padding: 0;
     overflow: hidden;
-    background-color: white;
+    background-color: #f5f6f5;
     font-family: 'Merriweather Sans', sans-serif;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
@@ -59,6 +56,7 @@ li a:hover {
 #home {
     /* add padding to the top of the home section */ 
     padding-top: 20px;
+    /* background-color: #f5f6f5; */
 }
 
 
