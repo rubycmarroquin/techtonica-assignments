@@ -1,0 +1,60 @@
+#navbar {
+    list-style-type: none;
+    /* Removes the bullets */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+header #navbar li {
+    margin-left: 2.5rem;
+}
+
+li {
+    float: left;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    color: #50C878;
+    /* color: #046307; */
+    font-family: 'Merriweather Sans', sans-serif;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
+.about {
+    background-color: orange;
+}
+
+.section-name {
+    background-color: blue;
+}
+
+.section-content {
+    background-color: red;
+}
+
+.tag {
+    background-color: green;
+}
+
+.section-container {
+    background-color: purple;
+}
+
+.box {
+    background-color: pink;
+}
