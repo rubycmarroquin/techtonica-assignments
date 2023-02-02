@@ -53,16 +53,24 @@ li a:hover {
     justify-content: center;
 }
 
-#home {
+#about {
     /* add padding to the top of the home section */ 
     padding-top: 20px;
-    /* background-color: #f5f6f5; */
+}
+
+.ending {
+    background-color: #44c56f;
+}
+
+#selfie {
+    background-color: orange;
+}
+img {
+    border-radius: 50%;
 }
 
 
-/** Type writting
-credit to: https://usefulangle.com/post/85/css-typewriter-animation
-**/
+/* Type writing credit to: https://usefulangle.com/post/85/css-typewriter-animation */
 .typewriter {
     font-family: Courier, monospace;
 	display: inline-block;
@@ -97,3 +105,5 @@ credit to: https://usefulangle.com/post/85/css-typewriter-animation
         border-color: orange; 
     }
 }
+
+/* #f5f6f5; */
