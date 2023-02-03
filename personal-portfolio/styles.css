@@ -7,7 +7,7 @@
 
 #main section {
     background-size: cover;
-    height:100vh;
+    height:80vh;
     width: 100vw;
     display: table;
 }
@@ -62,9 +62,6 @@ li a:hover {
     background-color: #44c56f;
 }
 
-#selfie {
-    background-color: orange;
-}
 img {
     border-radius: 50%;
 }
@@ -105,5 +102,27 @@ img {
         border-color: orange; 
     }
 }
+/* end of type writer animation */
 
 /* #f5f6f5; */
+
+.section-container {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+.box p {
+    flex: 1;
+    margin: 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+}
