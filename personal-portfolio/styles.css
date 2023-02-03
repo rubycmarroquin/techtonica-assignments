@@ -134,7 +134,6 @@ img {
 }
 
 .skills {
-
     background-color: #f5f6f5;;
 }
 
@@ -159,4 +158,39 @@ img {
     height: 125px;
     padding-top: 20px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+.form-section {
+    display: flex;
+    width: 600px;
+    height: 600px;
+    margin: 100px auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dbf4e3;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+label {
+    padding-top: 20px;
+}
+
+input[type="submit"] {
+    font-size: 20px;
+    background: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+input[type="submit"]:hover {
+    background-color:#e6ebe7;
 }
