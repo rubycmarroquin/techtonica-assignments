@@ -93,6 +93,13 @@ img {
     to { 
         width: 100% 
     }
+
+    0%   {color: red;}
+    20%  {color: orange;}
+    40%  {color: yellow;}
+    60%  {color: green;}
+    80%  {color: blue;}
+    100% {color:indigo};
 }
 
 @keyframes blink {
@@ -103,6 +110,7 @@ img {
         border-color: orange; 
     }
 }
+
 /* end of type writer animation */
 
 .section-container {
@@ -141,6 +149,7 @@ img {
     padding-top: 20px;
 }
 
+/* styling for the "Skills" section icons */ 
 .icons-skills{
     display: flex;
     flex-direction: row;
@@ -160,6 +169,7 @@ img {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 
+/** Styling for the form box */
 .form-section {
     display: flex;
     width: 600px;
@@ -173,6 +183,10 @@ img {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
 
+/* 
+ * Credit help with styling the text boxes: 
+ * https://stackoverflow.com/questions/3131072/how-to-change-input-text-box-style-to-line 
+ */
 input[type=text] {
     background: transparent;
     border: none;
@@ -183,6 +197,7 @@ label {
     padding-top: 20px;
 }
 
+/** Styling for the submit button */ 
 input[type="submit"] {
     font-size: 20px;
     background: white;
