@@ -64,6 +64,7 @@ li a:hover {
 
 img {
     border-radius: 50%;
+    padding-bottom: 20px;
 }
 
 
@@ -104,8 +105,6 @@ img {
 }
 /* end of type writer animation */
 
-/* #f5f6f5; */
-
 .section-container {
     display: flex;
     justify-content: center;
@@ -125,4 +124,39 @@ img {
     display: flex;
     justify-content: space-evenly;
     width: 20%;
+}
+
+.about {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 50%;
+}
+
+.skills {
+
+    background-color: #f5f6f5;;
+}
+
+.skills-heading {
+    padding-top: 20px;
+}
+
+.icons-skills{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dbf4e3;
+    border-radius: 20px;
+    width: 150px;
+    height: 125px;
+    padding-top: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
 }
