@@ -106,23 +106,26 @@
         <div class="form-section">
             <h2 class="contact-header"><i class="fa-solid fa-comment"></i> Contact Me</h2>
             <form>
-                <label for="fname">First name:</label><br>
-                <input type="text" id="fname" name="fname"><br>
+                <label for="name"><span style="color:red;">*</span> Name: <span style=" font-size: small; color :red"><em>Required</em></span></label><br>
+                <input type="text" id="name" name="name" required><br>
                 
-                <label for="lname">Last name:</label><br>
-                <input type="text" id="lname" name="lname"><br>
+                <label for="phone">Phone Number:</label><br>
+                <input type="text" id="phone" name="phone"><br>
                 
-                <label for="email">Email:</label><br>
-                <input type="text" id="email" name="email"><br>
+                <label for="email"><span style="color:red;">*</span> Email: <span style=" font-size: small; color :red"><em>Required</em></span></label><br>
+                <input type="text" id="email" name="email" required><br>
                 
-                <label for="message">Message:</label><br>
-                <input type="text" id="message" name="message"><br><br>
+                <label for="address">Address: <br> </label> <br>
+                <input type="text" id="address" name="address" maxlength="30"><br><br>
                 
-                <input type="submit" value="Submit" id="bttn">
+                <input type="submit" value="Submit">
             </form>
         </div>
     </section>
     <!-- contact me end -->
+
+    <!--script-->
+    <script src="./script.js"></script>
 </div>
 </body>
 
