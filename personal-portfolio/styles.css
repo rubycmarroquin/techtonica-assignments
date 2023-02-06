@@ -1,0 +1,211 @@
+/* Centers contents of the main div */ 
+#main{
+    vertical-align: middle;
+    width:100%;
+    text-align: center;
+}
+
+#main section {
+    background-size: cover;
+    height:80vh;
+    width: 100vw;
+    display: table;
+}
+
+#navbar {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f5f6f5;
+    font-family: 'Merriweather Sans', sans-serif;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+/* Adds spacing between each of the types */ 
+header #navbar li {
+    margin-left: 2.5rem;
+}
+
+li {
+    float: left;
+    font-family: 'Merriweather Sans', sans-serif;
+    list-style-type: none;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+li a:hover {
+    color: #44c56f;
+    font-family: 'Merriweather Sans', sans-serif;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
+/* Center Icons */
+.social-media {
+    display: flex;
+    justify-content: center;
+}
+
+#about {
+    /* add padding to the top of the home section */ 
+    padding-top: 20px;
+}
+
+.ending {
+    background-color: #44c56f;
+}
+
+img {
+    border-radius: 50%;
+    padding-bottom: 20px;
+}
+
+
+/* Type writing credit to: https://usefulangle.com/post/85/css-typewriter-animation */
+.typewriter {
+    font-family: Courier, monospace;
+	display: inline-block;
+}
+
+.typewriter-text {
+    display: inline-block;
+  	overflow: hidden;
+  	letter-spacing: 2px;
+ 	animation: typing 5s steps(30, end), blink .75s step-end infinite;
+    white-space: nowrap;
+    font-size: 30px;
+    font-weight: 700;
+    border-right: 4px solid orange;
+    box-sizing: border-box;
+}
+
+@keyframes typing {
+    from { 
+        width: 0% 
+    }
+    to { 
+        width: 100% 
+    }
+
+    0%   {color: red;}
+    20%  {color: orange;}
+    40%  {color: yellow;}
+    60%  {color: green;}
+    80%  {color: blue;}
+    100% {color:indigo};
+}
+
+@keyframes blink {
+    from, to { 
+        border-color: transparent 
+    }
+    50% { 
+        border-color: orange; 
+    }
+}
+
+/* end of type writer animation */
+
+.section-container {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+.box p {
+    flex: 1;
+    margin: 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+}
+
+.about {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 50%;
+}
+
+.skills {
+    background-color: #f5f6f5;;
+}
+
+.skills-heading {
+    padding-top: 20px;
+}
+
+/* styling for the "Skills" section icons */ 
+.icons-skills{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dbf4e3;
+    border-radius: 20px;
+    width: 150px;
+    height: 125px;
+    padding-top: 20px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+/** Styling for the form box */
+.form-section {
+    display: flex;
+    width: 600px;
+    height: 600px;
+    margin: 100px auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dbf4e3;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+/* 
+ * Credit help with styling the text boxes: 
+ * https://stackoverflow.com/questions/3131072/how-to-change-input-text-box-style-to-line 
+ */
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+label {
+    padding-top: 20px;
+}
+
+/** Styling for the submit button */ 
+input[type="submit"] {
+    font-size: 20px;
+    background: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+input[type="submit"]:hover {
+    background-color:#e6ebe7;
+}

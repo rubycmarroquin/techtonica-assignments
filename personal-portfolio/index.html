@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Set Tab Name-->
+    <title>Ruby's Portfolio</title>
+
+    <!--Style Sheets-->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link href="./styles.css" rel="stylesheet">
+
+    <!--font awesome kit-->
+    <script src="https://kit.fontawesome.com/a8dc37ea74.js" crossorigin="anonymous"></script>
+
+    <!--Fonts-->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@500&display=swap');
+    </style>
+
+</head>
+<div id="main">
+    <!--Navigation bar-->
+    <header align="center">
+        <nav>
+            <ul id="navbar">
+                <!-- <li id="Home">Home</li>  -->
+                <li><a href="#About">About</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#Education">Education</a></li>
+                <li><a href="#Experience">Experience</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!--End of navbar-->
+
+    <!-- about section starts -->
+    <section class="about" id="About">
+        <div class="typewriter">
+            <div class="typewriter-text">Hello, I'm Ruby Marroquin<i class="bi bi-emoji-smile"></i></div>
+        </div>
+        <div><img name="seflie" src="./images/selfie.png"></div>
+        <div class="section-content">
+            <h3><span class="tag">Full Stack Developer</span></h3>
+
+            <div class="about"><div>I grew up in Los Angeles, California, and I’m the youngest of four. I was raised to focus
+                on my education and became the first in my family to attend college, where I focused on mathematics and
+                was a math (algebra/pre-calculus) tutor for a few years. I then went to University of California, San
+                Diego (UCSD), but it eventually became too expensive. Despite this, I am on my journey of becoming a software
+                engineer thanks to Techtonica!</div></div>
+
+            <div class="section-container">
+                <div class="box">
+                    <p><i class="bi bi-gender-female"></i> Pronouns: she/her</p>
+                    <p><i class="bi bi-telephone-fill"></i> (310) - 748 - 8667 </p>
+                    <p><i class="bi bi-envelope"></i> rcmarroq21@gmail.com</p>
+                    <p><i class="bi bi-geo-alt-fill"></i> Los Angeles, CA 90731 </p>
+                </div>
+            </div>
+        </div>
+        <div class="social-media">
+            <ul class="social-icons">
+                <!--Icon link: https://icons.getbootstrap.com/ -->
+                <li><a class="linkedin" href="https://www.linkedin.com/in/rubymarroquin/"><i class="bi bi-linkedin"
+                            style="font-size: 30px"></i></a></li>
+                <li><a class="github" href="https://github.com/rubycmarroquin"><i class="bi bi-github"
+                            style="font-size: 30px"></i></a></li>
+                <li><a class="twitter" href="https://twitter.com/RubyCMarroquin"><i class="bi bi-twitter"
+                            style="font-size: 30px"></i></a></li>
+            </ul>
+        </div>
+    </section>
+    <!-- about section ends -->
+
+    <!-- skill section start -->
+    <section class="skills" id="Skills">
+        <h2 class="skills-heading"><i class="bi bi-laptop"></i> Skills</h2>
+        <div class="container">
+            <div class="row" id="skillsContainer">
+                <div class="icons-skills">
+                    <div class="icon"><p><i class="fa-brands fa-java" style="font-size: 40px"></i><br>Java</p></div>
+                    <div class="icon"><p><i class="fa-brands fa-js" style="font-size: 40px"></i><br>Javascript</p></div>
+                    <div class="icon"><p><i class="fa-brands fa-python" style="font-size: 40px"></i><br>Python</p></div>
+                    <div class="icon"><p><i class="fa-brands fa-html5" style="font-size: 50px"></i><br>HTML</p></div>
+                </div>
+                <div class="icons-skills">
+                    <div class="icon"><p><i class="fa-brands fa-css3-alt" style="font-size: 50px"></i><br>CSS</p></div>
+                    <div class="icon"><p><i class="fa-brands fa-github" style="font-size: 50px"></i><br>GitHub</p></div>
+                    <div class="icon"><p><i class="fa-brands fa-git" style="font-size: 50px"></i><br>git</p></div>
+                    <div class="icon"><p><i class="fa-brands fa-digital-ocean" style="font-size: 50px"></i><br>Digital Ocean</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- skill section ends -->
+
+    <!-- contact me start -->
+    <section class="contact" id="Contact">
+        <div class="form-section">
+            <h2 class="contact-header"><i class="fa-solid fa-comment"></i> Contact Me</h2>
+            <form>
+                <label for="name"><span style="color:red;">*</span> Name: <span style=" font-size: small; color :red"><em>Required</em></span></label><br>
+                <input type="text" id="name" name="name" required><br>
+                
+                <label for="phone">Phone Number:</label><br>
+                <input type="text" id="phone" name="phone"><br>
+                
+                <label for="email"><span style="color:red;">*</span> Email: <span style=" font-size: small; color :red"><em>Required</em></span></label><br>
+                <input type="text" id="email" name="email" required><br>
+                
+                <label for="address">Address: <br> </label> <br>
+                <input type="text" id="address" name="address" maxlength="30"><br><br>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </section>
+    <!-- contact me end -->
+
+    <!--script-->
+    <script src="./script.js"></script>
+</div>
+</body>
+
+</html>
