@@ -21,7 +21,7 @@ const eventObj3 = new Event('Jenny Lewis', 'On the line tour 2019');
 // create an empty Event array 
 const eventArray = new Array();
 
-/* Push objects into the array */ 
+/* Push objects into the array */
 
 // pushing multiple objects to an array at once
 eventArray.push(eventObj1, eventObj2, eventObj3);
@@ -42,8 +42,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handler when the DOM is fully loaded
     let html = '';
     eventArray.forEach((item) => {
-      html += `<li>${item.name} - ${item.description}`;
+        html += `<li>${item.name} - ${item.description}`;
     });
     document.querySelector('#event').innerHTML = html;
-  });
+});
+
+/**
+ * 
+ */
+class TicketType {
+    constructor(name, price) {
+        this.name = name;
+        this.price = price;
+    }
+}
 
