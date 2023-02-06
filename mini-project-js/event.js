@@ -9,6 +9,19 @@ class Event {
         this.description = description;
         this.availableTickets = [];
     }
+
+    addAvailableTickets (ticketType, price) {
+        this.availableTickets.push(new TicketType(ticketType, price));
+    }
+
+    allTickets() {
+        let output = `${this.name} - ${this.description} - All tickets: `
+        let tickets = "";
+        this.availableTickets.forEach((eventName, index) => {
+            tickets+= `${index+1}. ${this.availableTickets[index].name} ($${this.availableTickets[index].price}) `;
+        });
+        console.log(`${output}${tickets}`);
+    }
 }
 
 // The below statement creates an object.
@@ -57,3 +70,16 @@ class TicketType {
     }
 }
 
+eventObj1.addAvailableTickets("human", 299);
+eventObj1.addAvailableTickets("vampire", 99);
+
+eventObj2.addAvailableTickets("General Admission", 25)
+eventObj2.addAvailableTickets("Floor Seating", 80)
+
+eventObj3.addAvailableTickets("Orchestra", 300)
+eventObj3.addAvailableTickets("Mezzanine", 200)
+eventObj3.addAvailableTickets("Balcony", 100)
+
+eventObj1.allTickets();
+eventObj2.allTickets();
+eventObj3.allTickets();
