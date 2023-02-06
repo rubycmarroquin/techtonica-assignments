@@ -32,3 +32,22 @@ console.log(eventArray);
 eventArray.push(eventObj1, eventObj2, eventObj3);
 // check to see if both objs got pushed into array 
 console.log(eventArray);
+
+/**
+ * Code to iterate through it in the same js file using .forEach()
+ * and innerHTML. 
+ * 
+ * DOMContentLoaded explained source: 
+ * https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event
+ * 
+ * DOMContentLoaded event begins after the HTML document has been "completely parsed" 
+ * and all "deferred scripts" have finished downloading and executing. 
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    // Handler when the DOM is fully loaded
+    let html = '';
+    eventArray.forEach((item) => {
+      html += `<li>${item.name} - ${item.description}`;
+    });
+    document.querySelector('#event').innerHTML = html;
+  });
