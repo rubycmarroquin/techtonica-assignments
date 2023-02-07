@@ -17,10 +17,14 @@ class Event {
     allTickets() {
         let output = `${this.name} - ${this.description} - All tickets: `
         let tickets = "";
-        this.availableTickets.forEach((eventName, index) => {
-            tickets+= `${index+1}. ${this.availableTickets[index].name} ($${this.availableTickets[index].price}) `;
+        this.availableTickets.forEach((eventObj, index) => {
+            tickets += `${index+1}. ${eventObj.name} ($${eventObj.price}) `;
         });
         console.log(`${output}${tickets}`);
+    }
+
+    searchTickets(startRange, endRange) {
+        this.availableTickets.forEach(object)
     }
 }
 
@@ -70,6 +74,7 @@ class TicketType {
     }
 }
 
+/* Add available tickets to the event objects */
 eventObj1.addAvailableTickets("human", 299);
 eventObj1.addAvailableTickets("vampire", 99);
 
@@ -80,6 +85,7 @@ eventObj3.addAvailableTickets("Orchestra", 300)
 eventObj3.addAvailableTickets("Mezzanine", 200)
 eventObj3.addAvailableTickets("Balcony", 100)
 
+/* display all tickets to see if allTickets() works */
 eventObj1.allTickets();
 eventObj2.allTickets();
 eventObj3.allTickets();
