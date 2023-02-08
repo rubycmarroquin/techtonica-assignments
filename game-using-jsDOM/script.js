@@ -42,14 +42,16 @@ function generateButtons(buttonName, className) {
     return button;
 }
 
-function buttonsEventListenerAdder() {
-
+function buttonsEventListenerAdder(button, functionToAdd) {
+    
 }
 
 
 
 function startClicked() {
-
+    // hide the start button 
+    startButton.classList.toggle("hideStartButton");
+    generateGame();
 }
 
 // make the title of the game 
@@ -58,13 +60,14 @@ let titleOfGameDiv = generateElements("div", "", "titleOfGameDiv");
 let titleOfGame = generateElements("h1", `Guess the <span= id="title">Word<span>`, "titleOfGame");
 titleOfGameDiv.appendChild(titleOfGame);
 mainDiv.appendChild(titleOfGameDiv);
-body.appendChild(mainDiv);
 
 // generate start button 
 let startButtonDiv = generateElements("div", "", "startButtonDiv");
 let startButton = generateButtons("Start Game","startButton");
+startButton.addEventListener('click', startClicked, false);
 startButtonDiv.appendChild(startButton);
-body.appendChild(startButtonDiv);
+mainDiv.appendChild(startButtonDiv);
+body.appendChild(mainDiv);
 
 // generate 26 buttons for each letter of the alphabet 
 function generateAlphabetButtons() {
@@ -78,7 +81,15 @@ function generateAlphabetButtons() {
     });
     alphabetSection.appendChild(alphabetInnerDiv1);
     alphabetSection.appendChild(alphabetInnerDiv2);
-    body.appendChild(alphabetSection);
+    return alphabetSection;
 }
 
+//generate the game board 
+function generateGame() {
+    // create the board game section 
+    let gameBoard = generateElements("section", "", "gameBoard");
+
+    // call to generate the alphabet buttons div 
+    let alphabetButtons = generateAlphabetButtons;
+}
 /** NEXT PORTION: CREATE EVENT LISTENERS FOR EACH BUTTON **/
