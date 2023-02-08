@@ -50,3 +50,9 @@ titleOfGameDiv.appendChild(titleOfGame);
 mainDiv.appendChild(titleOfGameDiv);
 body.appendChild(mainDiv);
 
+// generate start button 
+let startButtonDiv = generateElements("div", "", "startButtonDiv");
+let startButton = generateButtons("startButton", "Start Game");
+startButtonDiv.appendChild(startButton);
+body.appendChild(startButtonDiv);
+
