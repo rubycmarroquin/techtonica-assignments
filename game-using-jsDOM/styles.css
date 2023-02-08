@@ -1,0 +1,8 @@
+.titleOfGameDiv {
+    display:flex;
+    justify-content: center;
+}
+
+#title{
+    color: red;
+}
