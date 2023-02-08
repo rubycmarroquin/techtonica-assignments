@@ -1,8 +1,33 @@
+body {
+    background-color: #eeeeee;
+}
+
 .titleOfGameDiv {
+    display:flex;
+    justify-content: center;
+    font-family: 'Elsie', cursive;
+    font-size: xx-large;
+
+}
+
+#title{
+    font-family: 'Great Vibes', cursive;
+    color: #8260a2;
+}
+
+.startButtonDiv {
     display:flex;
     justify-content: center;
 }
 
-#title{
-    color: red;
+.startButton {
+    border-radius: 20px;
+    border-width: 1px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #faf3f3;
+}
+
+.hideStartButton {
+    display: none;
 }
