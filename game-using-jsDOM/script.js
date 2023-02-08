@@ -56,3 +56,15 @@ let startButton = generateButtons("startButton", "Start Game");
 startButtonDiv.appendChild(startButton);
 body.appendChild(startButtonDiv);
 
+// generate 26 buttons for each letter of the alphabet 
+function generateAlphabetButtons() {
+    const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+    let alphabetDiv = generateElements("section","","alphabetSection");
+    alphabet.forEach(char => {
+        let charButton = generateButtons(char, "alphabetButton");
+        alphabetDiv.appendChild(charButton);
+    });
+    body.appendChild(alphabetDiv);
+}
+
+/** NEXT PORTION: CREATE EVENT LISTENERS FOR EACH BUTTON **/
