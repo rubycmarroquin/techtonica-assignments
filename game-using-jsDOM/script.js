@@ -24,4 +24,21 @@ function checkChar(char, word) {
     } return false;
 }
 
+// grab and store the body element tag
+let body = document.getElementsByTagName("body")[0];
+
+function generateElements(elementType, text, className) {
+    let element = document.createElement(elementType);
+    element.innerHTML = text;
+    element.className = className;
+    return element;
+}
+
+// make the title of the game 
+let mainDiv = generateElements("div", "", "mainDiv");
+let titleOfGameDiv = generateElements("div", "", "titleOfGameDiv");
+let titleOfGame = generateElements("h1", `Welcome to <span= id="title">Hangman<span>`, "titleOfGame");
+titleOfGameDiv.appendChild(titleOfGame);
+mainDiv.appendChild(titleOfGameDiv);
+body.appendChild(mainDiv);
 
