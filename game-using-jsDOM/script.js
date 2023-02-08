@@ -56,7 +56,7 @@ body.appendChild(mainDiv);
 
 // generate start button 
 let startButtonDiv = generateElements("div", "", "startButtonDiv");
-let startButton = generateButtons("startButton", "Start Game");
+let startButton = generateButtons("Start Game","startButton");
 startButtonDiv.appendChild(startButton);
 body.appendChild(startButtonDiv);
 
