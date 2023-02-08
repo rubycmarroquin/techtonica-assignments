@@ -42,10 +42,14 @@ function generateButtons(buttonName, className) {
     return button;
 }
 
+function startClicked() {
+
+}
+
 // make the title of the game 
 let mainDiv = generateElements("div", "", "mainDiv");
 let titleOfGameDiv = generateElements("div", "", "titleOfGameDiv");
-let titleOfGame = generateElements("h1", `Welcome to <span= id="title">Hangman<span>`, "titleOfGame");
+let titleOfGame = generateElements("h1", `Guess the <span= id="title">Word<span>`, "titleOfGame");
 titleOfGameDiv.appendChild(titleOfGame);
 mainDiv.appendChild(titleOfGameDiv);
 body.appendChild(mainDiv);
