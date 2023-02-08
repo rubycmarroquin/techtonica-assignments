@@ -34,6 +34,14 @@ function generateElements(elementType, text, className) {
     return element;
 }
 
+function generateButtons(buttonName, className) {
+    let button = document.createElement("button");
+    button.type = "button";
+    button.className = className;
+    button.innerText = buttonName;
+    return button;
+}
+
 // make the title of the game 
 let mainDiv = generateElements("div", "", "mainDiv");
 let titleOfGameDiv = generateElements("div", "", "titleOfGameDiv");
