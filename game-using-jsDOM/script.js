@@ -42,6 +42,12 @@ function generateButtons(buttonName, className) {
     return button;
 }
 
+function buttonsEventListenerAdder() {
+
+}
+
+
+
 function startClicked() {
 
 }
@@ -63,12 +69,16 @@ body.appendChild(startButtonDiv);
 // generate 26 buttons for each letter of the alphabet 
 function generateAlphabetButtons() {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-    let alphabetDiv = generateElements("section","","alphabetSection");
-    alphabet.forEach(char => {
+    let alphabetSection = generateElements("section","","alphabetSection");
+    let alphabetInnerDiv1 = generateElements("div","","alphabetInnerDiv");
+    let alphabetInnerDiv2 = generateElements("div","","alphabetInnerDiv");
+    alphabet.forEach((char, index) => {
         let charButton = generateButtons(char, "alphabetButton");
-        alphabetDiv.appendChild(charButton);
+        index < 13 ? alphabetInnerDiv1.appendChild(charButton) : alphabetInnerDiv2.appendChild(charButton);
     });
-    body.appendChild(alphabetDiv);
+    alphabetSection.appendChild(alphabetInnerDiv1);
+    alphabetSection.appendChild(alphabetInnerDiv2);
+    body.appendChild(alphabetSection);
 }
 
 /** NEXT PORTION: CREATE EVENT LISTENERS FOR EACH BUTTON **/
