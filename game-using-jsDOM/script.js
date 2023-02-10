@@ -9,8 +9,8 @@ const words = ['penguins', 'elephant', 'koala', 'synonym', 'peanut',
  * Gets a random word from the words array declared on line 2
  * @returns a word that has been randomly selected from the words_array
  */
-function getWord() {
-    return (words[Math.floor(Math.random() * words.length-1)]);
+function getWord(wordList) {
+    return (wordList[Math.floor(Math.random() * wordList.length-1)]);
 }
 
 // grab and store the body element tag
