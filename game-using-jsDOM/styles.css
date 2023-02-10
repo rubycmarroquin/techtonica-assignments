@@ -202,7 +202,7 @@ body {
 
 /*
  * Animation to change the color of the Word in title 
- * credit: 
+ * credit: https://codepen.io/alvarotrigo/pen/jOLgeqe
  */
 #word {
     animation: color-animation 4s linear infinite;
