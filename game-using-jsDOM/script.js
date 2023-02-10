@@ -1,20 +1,20 @@
 // Array of words that we will use for the game 
 const words = ['penguins', 'elephant', 'koala', 'synonym', 'peanut',
-    'english', 'ruby', 'react', 'friday', 'airplane', 'banana', 'birthday',
-    'waterfall', 'trampoline', 'window', 'president', 'basketball', 'hiccup',
-    'cheerleader', 'kangaroo', 'groundhog', 'soccer', 'handball', 'caterpillar',
-    'shoelaces', 'hungry', 'fishing', 'monster'];
+                'english', 'ruby', 'react','friday', 'airplane', 'banana', 'birthday', 
+                'waterfall', 'trampoline', 'window', 'president', 'basketball', 'hiccup', 
+                'cheerleader', 'kangaroo', 'groundhog', 'soccer', 'handball', 'caterpillar',
+                'shoelaces', 'hungry', 'fishing', 'monster'];
 
 /**
  * Gets a random word from the words array declared on line 2
  * @returns a word that has been randomly selected from the words_array
  */
 function getWord() {
-    return (words[Math.floor(Math.random() * words.length)]);
+    return (words[Math.floor(Math.random() * words.length-1)]);
 }
 
 // grab and store the body element tag
-let body = document.getElementsByTagName("body")[0];
+let body = document.body;
 
 /**
  * Creates new elements of the type passed by the parameter elementType
@@ -24,27 +24,30 @@ let body = document.getElementsByTagName("body")[0];
  * @param {string} className 
  * @returns the created element 
  */
-function generateElements(elementType, text, className) {
+function generateElement(elementType, text, className) {
     let element = document.createElement(elementType);
+    if(elementType==="button") {
+        element.type = "button";
+    }
     element.innerHTML = text;
     element.className = className;
     return element;
 }
 
-/**
- * Creates a new button element and modifies the button text 
- * to the buttonName arg and sets a class attribute 
- * @param {string} buttonName 
- * @param {string} className 
- * @returns the created button 
- */
-function generateButtons(buttonName, className) {
-    let button = document.createElement("button");
-    button.type = "button";
-    button.className = className;
-    button.innerText = buttonName;
-    return button;
-}
+// /**
+//  * Creates a new button element and modifies the button text 
+//  * to the buttonName arg and sets a class attribute 
+//  * @param {string} buttonName 
+//  * @param {string} className 
+//  * @returns the created button 
+//  */
+// function generateButtons(text, className) {
+//     let button = document.createElement("button");
+//     button.type = "button";
+//     button.className = className;
+//     button.innerText = text;
+//     return button;
+// }
 
 /**
  * Toggles a class to the startButton that hides the button 
@@ -64,25 +67,25 @@ function letterSelected() {
     console.log(word);
     // add additional class for styling 
     this.classList.toggle("selected");
-
+   
     // disable the button so it can't be selected again 
     this.disabled = true;
 
     // store character of the letter button selected
     let char = this.innerText;
-
+    
     // check to see if the character selected is in the word 
-    if (word.includes(char)) {
+    if(word.includes(char)) {
         // get the letterBoxesDiv 
         let letterBoxesDiv = document.getElementsByClassName("letterBoxesDiv")[0];
 
         // iterate through the letterBoxesDiv to update each matching letterBox char
-        for (let i = 0; i < word.length; i++) {
+        for(let i = 0; i < word.length; i++) {
             let currLetterBox = letterBoxesDiv.children[i];
-            if (word[i] === char) {
+            if(word[i] === char) {
                 updateLetterBox(currLetterBox, char);
                 correctGuesses++;
-                if (correctGuesses === word.length) {
+                if(correctGuesses===word.length) {
                     // code to end the game
                     generateEndScreen("won");
                 }
@@ -92,7 +95,7 @@ function letterSelected() {
         guessesLeft--;
         let guesses = document.getElementsByClassName("guesses")[0];
         guesses.innerHTML = `Number of guesses left: <span id="guessesSpan">${guessesLeft}</span>`
-        if (guessesLeft === 0) {
+        if(guessesLeft === 0) {
             // code to end the game 
             generateEndScreen("lost");
         }
@@ -109,15 +112,15 @@ function updateLetterBox(letterBox, letter) {
 }
 
 // make the title of the game 
-let mainDiv = generateElements("div", "", "mainDiv");
-let titleOfGameDiv = generateElements("div", "", "titleOfGameDiv");
-let titleOfGame = generateElements("h1", `Guess the <span id="word">Word</span>`, "titleOfGame");
+let mainDiv = generateElement("div", "", "mainDiv");
+let titleOfGameDiv = generateElement("div", "", "titleOfGameDiv");
+let titleOfGame = generateElement("h1", `Guess the <span id="word">Word</span>`, "titleOfGame");
 titleOfGameDiv.appendChild(titleOfGame);
 mainDiv.appendChild(titleOfGameDiv);
 
 // generate start button 
-let startButtonDiv = generateElements("div", "", "startButtonDiv");
-let startButton = generateButtons("Start Game", "startButton");
+let startButtonDiv = generateElement("div", "", "startButtonDiv");
+let startButton = generateElement("button", "Start Game","startButton");
 startButton.setAttribute("id", "startButton");
 startButton.addEventListener('click', startClicked, false);
 startButtonDiv.appendChild(startButton);
@@ -127,11 +130,11 @@ body.appendChild(mainDiv);
 // generate 26 buttons for each letter of the alphabet 
 function generateAlphabetButtons() {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-    let alphabetSection = generateElements("section", "", "alphabetSection");
-    let alphabetInnerDiv1 = generateElements("div", "", "alphabetInnerDiv");
-    let alphabetInnerDiv2 = generateElements("div", "", "alphabetInnerDiv");
+    let alphabetSection = generateElement("section","","alphabetSection");
+    let alphabetInnerDiv1 = generateElement("div","","alphabetInnerDiv");
+    let alphabetInnerDiv2 = generateElement("div","","alphabetInnerDiv");
     alphabet.forEach((char, index) => {
-        let charButton = generateButtons(char, "alphabetButton");
+        let charButton = generateElement("button", char, "alphabetButton");
         charButton.addEventListener('click', letterSelected);
         index < 13 ? alphabetInnerDiv1.appendChild(charButton) : alphabetInnerDiv2.appendChild(charButton);
     });
@@ -148,20 +151,20 @@ function generateGame() {
     word = getWord().toUpperCase();
     guessesLeft = 7;
     correctGuesses = 0;
-
+    
     // grab the main div to append game board 
     let mainDiv = document.getElementsByClassName("mainDiv")[0];
-
+    
     // create the board game section 
-    let gameBoard = generateElements("section", "", "gameBoard");
-    let gameBoardDiv = generateElements("div", "", "gameBoardDiv");
+    let gameBoard = generateElement("section", "", "gameBoard");
+    let gameBoardDiv = generateElement("div", "", "gameBoardDiv");
 
     // create div for the word letters boxes 
-    let letterBoxesDiv = generateElements("div", "", "letterBoxesDiv");
+    let letterBoxesDiv = generateElement("div", "", "letterBoxesDiv");
 
     // generate divs depending on word.length 
-    for (let i = 0; i < word.length; i++) {
-        let letterBox = generateElements("div", "", "letterBox")
+    for(let i = 0; i < word.length; i++) {
+        let letterBox = generateElement("div", "", "letterBox")
         letterBoxesDiv.appendChild(letterBox);
     }
 
@@ -169,8 +172,8 @@ function generateGame() {
     let alphabetButtons = generateAlphabetButtons();
 
     // create div to display number of guesses left 
-    let guessesDiv = generateElements("div", "", "guessesDiv")
-    let guesses = generateElements("h2", `Number of guesses left: <span id="guessesSpan">${guessesLeft}</span>`, "guesses");
+    let guessesDiv = generateElement("div", "", "guessesDiv")
+    let guesses = generateElement("h2", `Number of guesses left: <span id="guessesSpan">${guessesLeft}</span>`, "guesses");
 
     guessesDiv.appendChild(guesses);
 
@@ -183,7 +186,7 @@ function generateGame() {
 }
 
 // generate start over button to use in the end screen(s)
-let startOver = generateButtons("Start Over", "startOverButton");
+let startOver = generateElement("button", "Start Over", "startOverButton");
 startOver.addEventListener('click', resetScreen);
 startOver.setAttribute("id", "startOverButton")
 
@@ -192,20 +195,20 @@ function generateEndScreen(result) {
     let gameBoard = document.getElementsByClassName("gameBoard")[0];
     let mainDiv = document.getElementsByClassName("mainDiv")[0];
     mainDiv.removeChild(gameBoard);
-
+    
     let message = "";
-    let endScreenSection = generateElements("section", "", "endScreenSection");
-    let endScreenTextDiv = generateElements("div", "", "endScreenTextDiv");
-    if (result === "won") {
+    let endScreenSection = generateElement("section", "", "endScreenSection");
+    let endScreenTextDiv = generateElement("div", "", "endScreenTextDiv");
+    if(result === "won") {
         message = `<span id="YouWon">You win</span><br>Play again!`;
-    } else {
+    } else { 
         message = `<span id="GameOver">You lose</span><br>Better luck next time!`;
     }
-    let endScreenText = generateElements("h1", `${message}`, "endScreenText");
+    let endScreenText = generateElement("h1", `${message}`, "endScreenText");
     endScreenTextDiv.appendChild(endScreenText);
     endScreenSection.appendChild(endScreenTextDiv);
 
-    let startOverButtonDiv = generateElements("div", "", "startOverButtonDiv");
+    let startOverButtonDiv = generateElement("div", "", "startOverButtonDiv");
     startOverButtonDiv.appendChild(startOver);
     endScreenSection.appendChild(startOverButtonDiv);
     mainDiv.appendChild(endScreenSection);
