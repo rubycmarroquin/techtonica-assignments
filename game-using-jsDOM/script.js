@@ -133,7 +133,7 @@ let word, guessesLeft, correctGuesses;
 //generate the game board 
 function generateGame() {
     // resets game state 
-    word = getWord().toUpperCase();
+    word = getWord(words).toUpperCase();
     guessesLeft = 7;
     correctGuesses = 0;
     
