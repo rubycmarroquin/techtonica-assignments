@@ -1,7 +1,9 @@
 // Array of words that we will use for the game 
-const words = ['javascript', 'penguins', 'elephant', 'koala', 'synonym', 'peanut',
-                'english', 'ruby', 'techtonica', 'react', 'components', 'superduperfun',
-                'friday'];
+const words = ['penguins', 'elephant', 'koala', 'synonym', 'peanut',
+                'english', 'ruby', 'react','friday', 'airplane', 'banana', 'birthday', 
+                'waterfall', 'trampoline', 'window', 'president', 'basketball', 'hiccup', 
+                'cheerleader', 'kangaroo', 'groundhog', 'soccer', 'handball', 'caterpillar',
+                'shoelaces', 'hungry', 'fishing', 'monster'];
 
 /**
  * Gets a random word from the words array declared on line 2
