@@ -34,21 +34,6 @@ function generateElement(elementType, text, className) {
     return element;
 }
 
-// /**
-//  * Creates a new button element and modifies the button text 
-//  * to the buttonName arg and sets a class attribute 
-//  * @param {string} buttonName 
-//  * @param {string} className 
-//  * @returns the created button 
-//  */
-// function generateButtons(text, className) {
-//     let button = document.createElement("button");
-//     button.type = "button";
-//     button.className = className;
-//     button.innerText = text;
-//     return button;
-// }
-
 /**
  * Toggles a class to the startButton that hides the button 
  * Calls the generateGame() function to create the game
