@@ -1,16 +1,17 @@
 // Array of words that we will use for the game 
+
 const words = ['penguins', 'elephant', 'koala', 'synonym', 'peanut',
-                'english', 'ruby', 'react','friday', 'airplane', 'banana', 'birthday', 
-                'waterfall', 'trampoline', 'window', 'president', 'basketball', 'hiccup', 
-                'cheerleader', 'kangaroo', 'groundhog', 'soccer', 'handball', 'caterpillar',
-                'shoelaces', 'hungry', 'fishing', 'monster'];
+    'english', 'ruby', 'react', 'friday', 'airplane', 'banana', 'birthday',
+    'waterfall', 'trampoline', 'window', 'president', 'basketball', 'hiccup',
+    'cheerleader', 'kangaroo', 'groundhog', 'soccer', 'handball', 'caterpillar',
+    'shoelaces', 'hungry', 'fishing', 'monster'];
 
 /**
  * Gets a random word from the words array declared on line 2
  * @returns a word that has been randomly selected from the words_array
  */
 function getWord(wordList) {
-    return (wordList[Math.floor(Math.random() * wordList.length-1)]);
+    return (wordList[Math.floor(Math.random() * wordList.length - 1)]);
 }
 
 // grab and store the body element tag
@@ -26,9 +27,7 @@ let body = document.body;
  */
 function generateElement(elementType, text, className) {
     let element = document.createElement(elementType);
-    if(elementType==="button") {
-        element.type = "button";
-    }
+    if (elementType === "button") element.type = "button"; // saves space
     element.innerHTML = text;
     element.className = className;
     return element;
@@ -49,29 +48,28 @@ function startClicked() {
  * @param {button} letterButton 
  */
 function letterSelected() {
-    console.log(word);
     // add additional class for styling 
     this.classList.toggle("selected");
-   
+
     // disable the button so it can't be selected again 
     this.disabled = true;
 
     // store character of the letter button selected
     let char = this.innerText;
-    
+
     // check to see if the character selected is in the word 
-    if(word.includes(char)) {
+    if (word.includes(char)) {
         // get the letterBoxesDiv 
         let letterBoxesDiv = document.getElementsByClassName("letterBoxesDiv")[0];
 
         // iterate through the letterBoxesDiv to update each matching letterBox char
-        for(let i = 0; i < word.length; i++) {
+        for (let i = 0; i < word.length; i++) {
             let currLetterBox = letterBoxesDiv.children[i];
-            if(word[i] === char) {
+            if (word[i] === char) {
                 updateLetterBox(currLetterBox, char);
                 correctGuesses++;
-                if(correctGuesses===word.length) {
-                    // code to end the game
+                if (correctGuesses === word.length) {
+                    // code to end the game when won
                     generateEndScreen("won");
                 }
             }
@@ -80,16 +78,11 @@ function letterSelected() {
         guessesLeft--;
         let guesses = document.getElementsByClassName("guesses")[0];
         guesses.innerHTML = `Number of guesses left: <span id="guessesSpan">${guessesLeft}</span>`
-        if(guessesLeft === 0) {
-            // code to end the game 
+        if (guessesLeft === 0) {
+            // code to end the game when lost 
             generateEndScreen("lost");
         }
-        console.log(guessesLeft);
     }
-    // check to see if the letter selected is inside the word 
-    // update guess score if not in the word 
-    // update the div to show the letter in the letterBox if it is in the word 
-
 }
 
 function updateLetterBox(letterBox, letter) {
@@ -105,7 +98,7 @@ mainDiv.appendChild(titleOfGameDiv);
 
 // generate start button 
 let startButtonDiv = generateElement("div", "", "startButtonDiv");
-let startButton = generateElement("button", "Start Game","startButton");
+let startButton = generateElement("button", "Start Game", "startButton");
 startButton.setAttribute("id", "startButton");
 startButton.addEventListener('click', startClicked, false);
 startButtonDiv.appendChild(startButton);
@@ -115,9 +108,9 @@ body.appendChild(mainDiv);
 // generate 26 buttons for each letter of the alphabet 
 function generateAlphabetButtons() {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
-    let alphabetSection = generateElement("section","","alphabetSection");
-    let alphabetInnerDiv1 = generateElement("div","","alphabetInnerDiv");
-    let alphabetInnerDiv2 = generateElement("div","","alphabetInnerDiv");
+    let alphabetSection = generateElement("section", "", "alphabetSection");
+    let alphabetInnerDiv1 = generateElement("div", "", "alphabetInnerDiv");
+    let alphabetInnerDiv2 = generateElement("div", "", "alphabetInnerDiv");
     alphabet.forEach((char, index) => {
         let charButton = generateElement("button", char, "alphabetButton");
         charButton.addEventListener('click', letterSelected);
@@ -136,10 +129,10 @@ function generateGame() {
     word = getWord(words).toUpperCase();
     guessesLeft = 7;
     correctGuesses = 0;
-    
+
     // grab the main div to append game board 
     let mainDiv = document.getElementsByClassName("mainDiv")[0];
-    
+
     // create the board game section 
     let gameBoard = generateElement("section", "", "gameBoard");
     let gameBoardDiv = generateElement("div", "", "gameBoardDiv");
@@ -148,7 +141,7 @@ function generateGame() {
     let letterBoxesDiv = generateElement("div", "", "letterBoxesDiv");
 
     // generate divs depending on word.length 
-    for(let i = 0; i < word.length; i++) {
+    for (let i = 0; i < word.length; i++) {
         let letterBox = generateElement("div", "", "letterBox")
         letterBoxesDiv.appendChild(letterBox);
     }
@@ -180,13 +173,13 @@ function generateEndScreen(result) {
     let gameBoard = document.getElementsByClassName("gameBoard")[0];
     let mainDiv = document.getElementsByClassName("mainDiv")[0];
     mainDiv.removeChild(gameBoard);
-    
+
     let message = "";
     let endScreenSection = generateElement("section", "", "endScreenSection");
     let endScreenTextDiv = generateElement("div", "", "endScreenTextDiv");
-    if(result === "won") {
+    if (result === "won") {
         message = `<span id="YouWon">You win</span><br>Play again!`;
-    } else { 
+    } else {
         message = `<span id="GameOver">You lose</span><br>Better luck next time!`;
     }
     let endScreenText = generateElement("h1", `${message}`, "endScreenText");
