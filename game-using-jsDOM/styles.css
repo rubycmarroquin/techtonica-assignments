@@ -1,0 +1,290 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #cfe0e8;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.mainDiv {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    justify-content: center;
+    background-color: #eeeeee;
+    border-radius: 20px;
+    width: 1000px;
+    height: 800px;
+
+}
+
+.titleOfGameDiv {
+    display: flex;
+    justify-content: center;
+    font-family: cambria;
+    font-size: xx-large;
+}
+
+#word {
+    font-family: 'Great Vibes', cursive;
+    color: #8260a2;
+}
+
+.startButtonDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.hideStartButton {
+    display: none;
+}
+
+.gameBoard {
+    display: flex;
+    justify-content: center;
+
+}
+
+.gameBoardDiv {
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.letterBoxesDiv {
+    justify-content: center;
+    display: flex;
+    padding: 20px;
+}
+
+.letterBox {
+    margin: 5px 5px 5px 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    padding: 20px;
+    height: 15px;
+    width: 10px;
+}
+
+#guessesSpan {
+    color: #36486b;
+    ;
+}
+
+.alphabetInnerDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.alphabetButton {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    margin: 2px 2px 2px 2px;
+    background-color: #dae5e9;
+    border: 1px solid #d5d9d9;
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+}
+
+.alphabetButton:hover {
+    background-color: #95b3be;
+}
+
+.alphabetButton:active {
+    background: #61a2ac;
+}
+
+.alphabetButton:disabled {
+    background-color: rgb(246, 243, 243);
+}
+
+.guessesDiv {
+    box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+    padding: 10px 10px 15px 15px;
+    border: 1px solid #d5d9d9;
+}
+
+.endScreenSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.endScreenTextDiv {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+#GameOver {
+    font-family: 'Notable', sans-serif;
+    font-size: 80px;
+    color: red;
+}
+
+#YouWon {
+    font-family: 'Notable', sans-serif;
+    font-size: 80px;
+    color: green;
+}
+
+/* Animation for Start Button
+ * Credit: https://codepen.io/chloe47632/pen/gOgxXGR
+ */
+
+.startButton,
+.startOverButton {
+    margin: auto;
+    border-radius: 20px;
+    background-color: #667292;
+    box-shadow: 10px 15px 40px #36486b;
+    width: 300px;
+    height: 100px;
+    font-size: 50px;
+    font-family: cambria;
+    color: #bccad6;
+    border: none;
+}
+
+.startButton:hover,
+.startOverButton:hover {
+    border: none;
+    background-color: #8d9db6;
+    opacity: 1;
+    color: #36486b;
+}
+
+.startButton,
+.startOverButton {
+    border: none;
+    background-color: #8d9db6;
+    opacity: 1;
+    color: #36486b;
+}
+
+#startButton:hover,
+#startOverButton:hover {
+    transition: 0.5s ease-in-out;
+    background: #8d9db6;
+}
+
+.startButton,
+.startOverButton {
+    --color1: #36486b;
+    --color2: #bccad6;
+    font-family: cambria;
+    text-align: center;
+    font-size: 46px;
+    background: repeating-linear-gradient(45deg,
+            var(--color1),
+            var(--color1) 30px,
+            var(--color2) 30px,
+            var(--color2) 60px);
+    background-clip: text;
+    color: transparent;
+    -webkit-background-clip: text;
+    animation: 40s linear 0s infinite move;
+}
+
+@keyframes move {
+    from {
+        background-position: 0px;
+    }
+
+    to {
+        background-position: 1000px;
+    }
+}
+
+/*
+ * Animation to change the color of the Word in title 
+ * credit: https://codepen.io/alvarotrigo/pen/jOLgeqe
+ */
+#word {
+    animation: color-animation 4s linear infinite;
+}
+
+#word {
+    --color-1: #DF8453;
+    --color-2: #3D8DAE;
+    --color-3: #E4A9A8;
+}
+
+@keyframes color-animation {
+    0% {
+        color: var(--color-1)
+    }
+
+    32% {
+        color: var(--color-1)
+    }
+
+    33% {
+        color: var(--color-2)
+    }
+
+    65% {
+        color: var(--color-2)
+    }
+
+    66% {
+        color: var(--color-3)
+    }
+
+    99% {
+        color: var(--color-3)
+    }
+
+    100% {
+        color: var(--color-1)
+    }
+}
+
+/** Animation for Game Over **/
+#GameOver {
+    margin-bottom: 0px;
+    animation: textBounceStretch 3s 1;
+    position: relative;
+}
+
+@keyframes textBounceStretch {
+    0% {
+        color: white;
+        margin-bottom: -40px;
+    }
+
+    30% {
+        letter-spacing: 25px;
+        margin-bottom: -40px;
+    }
+
+    85% {
+        letter-spacing: 8px;
+        margin-bottom: -40px;
+    }
+}
+
+/** Animation for Winning Game **/
+#YouWon {
+    margin-bottom: 0px;
+    animation: textBounceStretch 3s 1;
+    position: relative;
+}
+
+@keyframes textBounceStretch {
+    0% {
+        color: white;
+        margin-bottom: -40px;
+    }
+
+    30% {
+        letter-spacing: 25px;
+        margin-bottom: -40px;
+    }
+
+    85% {
+        letter-spacing: 8px;
+        margin-bottom: -40px;
+    }
+}
