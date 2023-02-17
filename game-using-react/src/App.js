@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import {useState} from 'react';
+import Title from './components/Title'
 import './App.css';
 
 function App() {
+
+  /* Handles the startButton being clicked and hidden */
+  const [startButtonClicked, setStarted] = useState(false);
+  const startClicked = () => {
+    // hide the start button 
+    setStarted(true);
+    // generateGame();
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="mainDiv">
+      <Title />
+      <div className="startButtonDiv">
+        <button type="button" className={`startButton ${!startButtonClicked ? "" : "hideStartButton"}`} id="startButton" onClick={startClicked}>
+          Start Game
+        </button>
+      </div>
     </div>
   );
 }
