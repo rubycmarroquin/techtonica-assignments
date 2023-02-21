@@ -2,15 +2,18 @@ import { useState } from "react";
 import EndGameScreen from "./EndGameScreen";
 
 function GameBoard({ wordList }) {
+  /** Default states when first starting game */
   const [guessesLeft, setGuessesLeft] = useState(7);
   const [correctGuesses, setCorrectGuesses] = useState(0);
   const [lettersSelected, setLettersSelected] = useState([]);
   const [word, setWord] = useState(getWord(wordList));
 
+  /** Handles the letter divs to display or not display letter */
   const LetterBox = ({ letter, showLetter }) => (
     <div className="letterBox">{showLetter ? letter : ""}</div>
   );
 
+  /** Handles the Buttons of each letter in the alphabet */
   const AlphabetLetter = ({ letter }) => {
     return (
       <button
@@ -24,6 +27,7 @@ function GameBoard({ wordList }) {
     );
   };
 
+  /** Resets the states */
   function resetGame() {
     setGuessesLeft(7);
     setCorrectGuesses(0);
@@ -31,14 +35,17 @@ function GameBoard({ wordList }) {
     setWord(getWord(wordList));
   }
 
+  /** Grabs a random word from a list */
   function getWord(wordList) {
     return wordList[Math.floor(Math.random() * wordList.length - 1)];
   }
 
+  /** checks to see if the game is over */
   function isGameOver() {
     return guessesLeft <= 0 || correctGuesses === word.length;
   }
 
+  /** Handles letters when they are selected */
   function letterSelected(event) {
     let char = event.target.innerText.toLowerCase();
     setLettersSelected([...lettersSelected, char]);
