@@ -8,6 +8,7 @@ function GameBoard({ wordList }) {
   const [lettersSelected, setLettersSelected] = useState([]);
   const [word, setWord] = useState(getWord(wordList));
 
+  console.log(word);
 
   const LetterBox = ({ letter, showLetter }) => (
     <div className="letterBox">{showLetter ? letter : ""}</div>
