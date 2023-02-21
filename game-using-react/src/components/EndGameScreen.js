@@ -16,9 +16,3 @@ function EndGameScreen({result}) {
 }
 
 export default EndGameScreen;
-
-// let endScreenSection = generateElement("section", "", "endScreenSection");
-// let endScreenTextDiv = generateElement("div", "", "endScreenTextDiv");
-// let endScreenText = generateElement("h1", `${message}`, "endScreenText");
-// endScreenTextDiv.appendChild(endScreenText);
-// endScreenSection.appendChild(endScreenTextDiv);
