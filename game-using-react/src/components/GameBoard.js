@@ -2,13 +2,11 @@ import { useState } from "react";
 import EndGameScreen from "./EndGameScreen";
 
 function GameBoard({ wordList }) {
-  console.log(wordList)
   const [guessesLeft, setGuessesLeft] = useState(7);
   const [correctGuesses, setCorrectGuesses] = useState(0);
   const [lettersSelected, setLettersSelected] = useState([]);
   const [word, setWord] = useState(getWord(wordList));
 
-  console.log(word);
 
   const LetterBox = ({ letter, showLetter }) => (
     <div className="letterBox">{showLetter ? letter : ""}</div>
