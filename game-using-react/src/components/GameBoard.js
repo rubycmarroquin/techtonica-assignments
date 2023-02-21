@@ -7,7 +7,6 @@ function GameBoard({ wordList }) {
   const [lettersSelected, setLettersSelected] = useState([]);
   const [word, setWord] = useState(getWord(wordList));
 
-
   const LetterBox = ({ letter, showLetter }) => (
     <div className="letterBox">{showLetter ? letter : ""}</div>
   );
@@ -29,11 +28,11 @@ function GameBoard({ wordList }) {
     setGuessesLeft(7);
     setCorrectGuesses(0);
     setLettersSelected([]);
-    setWord(getWord(wordList))
+    setWord(getWord(wordList));
   }
 
   function getWord(wordList) {
-    return (wordList[Math.floor(Math.random() * wordList.length - 1)]);
+    return wordList[Math.floor(Math.random() * wordList.length - 1)];
   }
 
   function isGameOver() {
