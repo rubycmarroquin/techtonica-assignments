@@ -30,6 +30,14 @@ app.get('/books/', (request, response) => {
     response.send("In the books portion");
 });
 
+// get method by isbn 
+app.get('/books/:ID', (request, response) => {
+    // store id in a variable 
+    let id = request.params.ID;
+    
+    response.send(`${id}`);
+});
+
 // make the server listen to requests
 app.listen(PORT, () => {
   console.log(`Server running at: http://localhost:${PORT}/`);
