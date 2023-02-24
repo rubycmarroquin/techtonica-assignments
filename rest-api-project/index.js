@@ -20,19 +20,30 @@ app.use(cors(PORT));
 
 // create a route for the app
 app.get('/', (request, response) => {
-  response.send('Hello World');
+  response.send('Hello. This is the default home page!');
 });
 
 // create a route to books for the app 
 app.get('/books/', (request, response) => {
-    response.send("In the books portion");
+    response.json(booklist);
 });
 
 // get method by isbn 
 app.get('/books/:ID', (request, response) => {
     // store id in a variable 
     let id = request.params.ID;
-    response.send(`Hello`);
+    
+    //iterate through booklist to find the book with the matching isbn 
+    for(let i = 0; i < booklist.length; i++) {
+        if(booklist[i]['isbn'] == id) {
+            response.send(`Book Title: ${booklist[i].title} 
+            ISBN Code: ${booklist[i].isbn}
+            Author: ${booklist[i].author}
+            Publisher: ${booklist[i].publisher}`);
+        }
+    }
+    // the book was not found message 
+    response.status(400).send(`The Book ISBN (${id}) you tried looking for was not found`);
 });
 
 // make the server listen to requests
