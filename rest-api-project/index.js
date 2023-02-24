@@ -17,6 +17,7 @@ const app = express();
 const PORT = 5005;
 
 app.use(cors(PORT));
+app.use(express.json());
 
 // create a route for the app
 app.get('/', (request, response) => {
@@ -46,7 +47,13 @@ app.get('/books/:ID', (request, response) => {
     response.status(400).send(`The Book ISBN (${id}) you tried looking for was not found`);
 });
 
-//
+app.post('/books/:ID', (request, reponse) => {
+    const newBookObj = request.body;
+    booklist.push(newBookObj);
+    response.json(booklist);
+});
+
+
 app.delete('/books/:ID', (request, response) => {
     // store id in a variable 
     let id = request.params.ID;
