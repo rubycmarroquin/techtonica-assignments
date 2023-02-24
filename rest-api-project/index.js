@@ -47,12 +47,17 @@ app.get('/books/:ID', (request, response) => {
     response.status(400).send(`The Book ISBN (${id}) you tried looking for was not found`);
 });
 
-app.post('/books/:ID', (request, reponse) => {
-    const newBookObj = request.body;
+app.post('/books/:ID', (request, response) => {
+    let body = request.body;
+    const newBookObj = {
+        "title": body.title,
+        "isbn": request.params.ID,
+        "author": body.author,
+        "publisher": body.publisher
+    }
     booklist.push(newBookObj);
     response.json(booklist);
 });
-
 
 app.delete('/books/:ID', (request, response) => {
     // store id in a variable 
