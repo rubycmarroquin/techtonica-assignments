@@ -46,6 +46,20 @@ app.get('/books/:ID', (request, response) => {
     response.status(400).send(`The Book ISBN (${id}) you tried looking for was not found`);
 });
 
+//
+app.delete('/books/:ID', (request, response) => {
+    // store index of book if found 
+    //iterate through booklist to find the book with the matching isbn 
+    for(let i = 0; i < booklist.length; i++) {
+        if(booklist[i].isbn == id) {
+            let deletedBook = booklist.splice(i, 1);
+            response.send(`The book that was deleted was: ${deletedBook.title}`);
+            break;
+        }
+    }
+    response.status(400).send(`The Book ISBN (${id}) you tried looking for was not found`);
+})
+
 // make the server listen to requests
 app.listen(PORT, () => {
   console.log(`Server running at: http://localhost:${PORT}/`);
