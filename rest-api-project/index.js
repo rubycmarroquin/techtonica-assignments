@@ -48,6 +48,9 @@ app.get('/books/:ID', (request, response) => {
 
 //
 app.delete('/books/:ID', (request, response) => {
+    // store id in a variable 
+    let id = request.params.ID;
+    
     //iterate through booklist to find the book with the matching isbn 
     for(let i = 0; i < booklist.length; i++) {
         if(booklist[i].isbn == id) {
