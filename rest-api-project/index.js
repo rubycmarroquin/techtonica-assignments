@@ -75,12 +75,12 @@ app.put('/books/:ID', (request, response) => {
     for(let i = 0; i < booklist.length; i++) {
         // find the book to update
         if(booklist[i]['isbn'] == bookISBN) {
-        booklist[i]['title'] = body.title;
-        booklist[i]['isbn'] = body.isbn;
-        booklist[i]['author'] = body.author,
-        booklist[i]['publisher'] = body.publisher
+            booklist[i]['title'] = body.title;
+            booklist[i]['isbn'] = body.isbn;
+            booklist[i]['author'] = body.author,
+            booklist[i]['publisher'] = body.publisher
+            return response.send(booklist);
         }
-        return response.send(booklist);
     }
     
     // the book was not found message 
@@ -96,8 +96,8 @@ app.delete('/books/:ID', (request, response) => {
         if(booklist[i].isbn == bookISBN) {
             let deletedBook = booklist[i];
             booklist.splice(i, 1);
-            // response.json(booklist);
-            return response.send(`The book that was deleted was: ${deletedBook.title} by ${deletedBook.author}`);
+            // response.json(booklist); 
+            return response.send(`The book that was deleted was: ${deletedBook.title} by ${deletedBook.author}.`);
         }
     }
     return response.status(400).send(`The Book ISBN (${bookISBN}) you tried looking for was not found`);
