@@ -21,59 +21,86 @@ app.use(express.json());
 
 // create a route for the app
 app.get('/', (request, response) => {
-  response.send('Hello. This is the default home page!');
+  return response.send('Hello. This is the default home page!');
 });
 
 // create a route to books for the app 
 app.get('/books/', (request, response) => {
-    response.json(booklist);
+    return response.json(booklist);
 });
 
 // get method by isbn 
 app.get('/books/:ID', (request, response) => {
     // store isbn in a variable 
-    let isbn = request.params.ID;
+    let bookISBN = request.params.ID;
     
     //iterate through booklist to find the book with the matching isbn 
     for(let i = 0; i < booklist.length; i++) {
-        if(booklist[i]['isbn'] == isbn) {
-            response.send(`Book Title: ${booklist[i].title} 
+        if(booklist[i]['isbn'] == bookISBN) {
+            return response.send(`Book Title: ${booklist[i].title} 
             ISBN Code: ${booklist[i].isbn}
             Author: ${booklist[i].author}
             Publisher: ${booklist[i].publisher}`);
         }
     }
     // the book was not found message 
-    response.status(400).send(`The Book ISBN (${id}) you tried looking for was not found`);
+    return response.status(400).send(`The Book ISBN (${bookISBN}) you tried looking for was not found`);
 });
 
 app.post('/books/:ID', (request, response) => {
-    let body = request.body;
+    // store isbn in variable 
+    let bookISBN = request.params.ID;
+
+    // store request body in variable
+    let body = request.body; 
+
     const newBookObj = {
         "title": body.title,
-        "isbn": request.params.ID,
+        "isbn": bookISBN,
         "author": body.author,
         "publisher": body.publisher
     }
     booklist.push(newBookObj);
-    response.json(booklist);
+    return response.json(booklist);
+});
+
+app.put('/books/:ID', (request, response) => {
+    // store isbn in variable 
+    let bookISBN = request.params.ID;
+        
+    // store request body in variable
+    let body = request.body; 
+    
+    //iterate through booklist to find the book with the matching isbn 
+    for(let i = 0; i < booklist.length; i++) {
+        // find the book to update
+        if(booklist[i]['isbn'] == bookISBN) {
+        booklist[i]['title'] = body.title;
+        booklist[i]['isbn'] = body.isbn;
+        booklist[i]['author'] = body.author,
+        booklist[i]['publisher'] = body.publisher
+        }
+        return response.send(booklist);
+    }
+    
+    // the book was not found message 
+    return response.status(400).send(`The Book ISBN (${bookISBN}) you tried looking for was not found`);
 });
 
 app.delete('/books/:ID', (request, response) => {
     // store isbn in a variable 
-    let isbn = request.params.ID;
+    let bookISBN = request.params.ID;
 
     //iterate through booklist to find the book with the matching isbn 
     for(let i = 0; i < booklist.length; i++) {
-        if(booklist[i].isbn == isbn) {
+        if(booklist[i].isbn == bookISBN) {
             let deletedBook = booklist[i];
             booklist.splice(i, 1);
             // response.json(booklist);
-            response.send(`The book that was deleted was: ${deletedBook.title} by ${deletedBook.author}`);
-            break;
+            return response.send(`The book that was deleted was: ${deletedBook.title} by ${deletedBook.author}`);
         }
     }
-    response.status(400).send(`The Book ISBN (${id}) you tried looking for was not found`);
+    return response.status(400).send(`The Book ISBN (${bookISBN}) you tried looking for was not found`);
 })
 
 // make the server listen to requests
