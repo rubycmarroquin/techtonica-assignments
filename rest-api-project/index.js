@@ -31,12 +31,12 @@ app.get('/books/', (request, response) => {
 
 // get method by isbn 
 app.get('/books/:ID', (request, response) => {
-    // store id in a variable 
-    let id = request.params.ID;
+    // store isbn in a variable 
+    let isbn = request.params.ID;
     
     //iterate through booklist to find the book with the matching isbn 
     for(let i = 0; i < booklist.length; i++) {
-        if(booklist[i]['isbn'] == id) {
+        if(booklist[i]['isbn'] == isbn) {
             response.send(`Book Title: ${booklist[i].title} 
             ISBN Code: ${booklist[i].isbn}
             Author: ${booklist[i].author}
@@ -60,12 +60,12 @@ app.post('/books/:ID', (request, response) => {
 });
 
 app.delete('/books/:ID', (request, response) => {
-    // store id in a variable 
-    let id = request.params.ID;
+    // store isbn in a variable 
+    let isbn = request.params.ID;
 
     //iterate through booklist to find the book with the matching isbn 
     for(let i = 0; i < booklist.length; i++) {
-        if(booklist[i].isbn == id) {
+        if(booklist[i].isbn == isbn) {
             let deletedBook = booklist[i];
             booklist.splice(i, 1);
             // response.json(booklist);
