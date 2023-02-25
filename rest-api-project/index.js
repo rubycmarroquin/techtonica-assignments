@@ -1,7 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import booklist from './books.js';
-
+import path from 'path';
 /**
  * Initial steps: 
  * go into folder on command line, do npm init, npm install express, npm install nodemon --save-dev
@@ -14,7 +14,7 @@ import booklist from './books.js';
 const app = express();
 
 // server configuration
-const PORT = 5005;
+const PORT = 5001;
 
 app.use(cors(PORT));
 app.use(express.json());
@@ -99,6 +99,10 @@ app.delete('/books/:ID', (request, response) => {
         }
     }
     return response.status(400).send(`The Book ISBN (${bookISBN}) you tried looking for was not found`);
+})
+
+app.use((request, response) =>{
+    response.status(404).sendFile(("/Users/rubymarroquin/techtonica-assignments/rest-api-project/client/404.html")); 
 })
 
 // make the server listen to requests
