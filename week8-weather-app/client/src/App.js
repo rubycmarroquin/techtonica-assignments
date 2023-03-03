@@ -6,6 +6,7 @@ import WeatherCard from './components/weatherCard';
 function App() {
   const [city, setCity] = useState("");
   const [result, setResult] = useState(null);
+  const [handleSubmitStatus, setHandleSubmitStatus] = useState(false);
 
   //A function to do the get request and set the state from openweather api
   const loadCity = (city) => {
@@ -16,7 +17,7 @@ function App() {
       .then((response) => response.json())
       .then((result) => {
         // console.log("this is the data: ", result)
-        setCity(result.weather[0].name);
+        setCity(result.name);
         setResult(result);
       });
   }
@@ -32,7 +33,9 @@ function App() {
  const handleSubmit = (e) => {
   e.preventDefault();
   // pass in the city to loadCity to get data from backend 
+  console.log(city)
   loadCity(city);
+  setCity("")
  }
 
 
