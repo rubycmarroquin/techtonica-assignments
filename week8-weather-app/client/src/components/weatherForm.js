@@ -1,22 +1,26 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/fontawesome-free-solid'
 const WeatherForm = (props) => {
   //what is inside props = {city, handleCityChange, handleSubmit}
     return (
-        <div className="weather">
-        <h1 className="App-header">Weather Forecast</h1>
-        <form onSubmit={props.handleSubmit}>
-          <input
-            id="city-name"
-            type="text"
-            placeholder="Please enter your city"
-            name="city"
-            // value={cityName}
-            // onChange={handleCityChange} // set the cityName 
-            value={props.city}
-            onChange={props.handleCityChange}
-            required // instead of readonly, change to required
-          />
-          <input type="submit" value="Submit" />
-        </form>
+        <div className="weatherFormMainDiv">
+        <h1 className="weatherFormHeader">Your <span><br/>Weather Forecast</span></h1>
+          <form onSubmit={props.handleSubmit}>
+            <div className="formDiv">
+            <input
+              id="city-name"
+              type="text"
+              placeholder="Please enter your city"
+              name="city" 
+              value={props.city}
+              onChange={props.handleCityChange}
+              required // instead of readonly, change to required
+              className="searchBar" 
+            />
+            <button type="submit" className="submitButton"><FontAwesomeIcon className="icon" icon={faSearch}/></button>
+            {/* <input type="submit" value="Search" className="submitButton"/> */}
+            </div>
+          </form>
       </div>
     )
 }
