@@ -6,7 +6,6 @@ import WeatherCard from './components/weatherCard';
 function App() {
   const [city, setCity] = useState("");
   const [result, setResult] = useState(null);
-  const [handleSubmitStatus, setHandleSubmitStatus] = useState(false);
 
   //A function to do the get request and set the state from openweather api
   const loadCity = (city) => {
@@ -35,6 +34,7 @@ function App() {
   // pass in the city to loadCity to get data from backend 
   console.log(city)
   loadCity(city);
+  // reset search bar to nothing
   setCity("")
  }
 
@@ -42,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <WeatherForm city={city} handleCityChange={handleCityChange} handleSubmit={handleSubmit}/>
-      {!result ? <p>Please click the botton to see Data</p> : <WeatherCard data={result} /> }
+      {!result ? <p></p> : <WeatherCard data={result} /> }
     </div>
   );
 }
