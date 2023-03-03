@@ -1,27 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Inter', sans-serif;
   display: flex;
   justify-content: center;
+  background-image: url("https://img.freepik.com/premium-vector/cloudscape-sky-cartoon-background-light-blue-daytime-sky-with-white-fluffy-clouds-heaven-with-bright-weather-summer-season-outdoor-scene-vector-illustration_87946-3442.jpg?w=1800");
+  /* background-image: url("https://img.freepik.com/free-vector/sky-background-video-conferencing_23-2148628238.jpg?t=st=1677865620~exp=1677866220~hmac=30778d4cf01ce5d38aefe4781626fe7c6a409b93dc68d4e6b662a586228a924c"); */
 }
 
-form{
-margin-left: 150px;
+.weatherFormMainDiv {
+  padding: 20px;
 }
 
+.formDiv {
+  /* background-color: orange; */
+  display: flex;
+  justify-content: center;
+  min-width: 350px;
+  padding: 20px;
+  padding-top: 50px;
+  height: 100px;
+}
 
-.App {
-  /* text-align: center; */
-  margin: auto;
-  padding-left: 20px;
- }
- .App-header{
-   color:blue
- }
-.data{
-  color: purple
+.weatherFormMainDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.weatherCard {
+  margin: 0 auto;
+  margin-top: 5%;
+  padding: 5px 30px;
+  width: 290px;
+  height: 325px;
+  border-radius: 3px;
+  background-color: #fff;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, .2);
+  opacity: 80%;
+}
+
+.weatherFormHeader {
+  /* background-color: orange; */
+  padding: 20px;
+}
+
+/** search bar: https: //codepen.io/huange/pen/bGqMqM */
+.searchBar {
+  width: 100%;
+  border: 3px solid #70797a;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 10px 0 0 10px;
+  outline: none;
+  /* color: #9DBFAF; */
+}
+
+.submitButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #868e8f;
+  background: #70797a;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 10px 10px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/** Weather Card City */
+.nameOfCity {
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.weatherIconDiv {
+  display: flex;
+  float: left;
+  position: relative;
+  margin-top: -65px;
+}
+
+img {
+    max-width: 300px;
+    max-height: 150px;
+    margin-top: -20px;
+}
+
+#description {
+    min-width: 150px;
+    max-height: 150px;
+    display: flex;
+    padding-top: 50px;
+}
+
+#icon {
+  justify-content: center;
+  /* background-color: orange; */
+  margin-right: 100px;
+}
+
+/*Title of Website
+reference: https: //codepen.io/ryandsouza13/pen/yEBJQV */
+h1 {
+  position: absolute;
+  top: 35%;
+  right: 80%;
+  transform: translate(50%, -50%);
+  text-transform: uppercase;
+  font-family: verdana;
+  font-size: 5em;
+  font-weight: 700;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 1px #919191,
+    1px 2px 1px #919191,
+    1px 3px 1px #919191,
+    1px 4px 1px #919191,
+    1px 5px 1px #919191,
+    1px 6px 1px #919191,
+    1px 7px 1px #919191,
+    1px 8px 1px #919191,
+    1px 9px 1px #919191,
+    1px 10px 1px #919191,
+    1px 18px 6px rgba(16, 16, 16, 0.4),
+    1px 22px 10px rgba(16, 16, 16, 0.2),
+    1px 25px 35px rgba(16, 16, 16, 0.2),
+    1px 30px 60px rgba(16, 16, 16, 0.4);
 }
