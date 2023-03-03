@@ -14,17 +14,18 @@ app.get('/', (req, res) => {
   });
 
 // connects to the open weather api 
-app.get("/weather", (request, response) => {
+app.get("/weather", (req, res) => {
   const city = req.query.cityName;
   const apiKey = process.env.API_KEY;
   const params = new URLSearchParams({
-    q: req.querycityName,
+    q: req.query.cityName,
     appid: process.env.API_KEY,
     units: "imperial",
   });
   const url = `https://api.openweathermap.org/data/2.5/weather?${params}`;
   console.log(url);
   fetch(url).then((res) => res.json()).then((data) => {
+    console.log(data);
     res.send({data});
   }).catch((error) => {console.log(error)});
 });
