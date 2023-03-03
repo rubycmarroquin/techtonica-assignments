@@ -14,11 +14,6 @@ app.get('/', (req, res) => {
     res.json({ message: 'Hello from My template ExpressJS' });
   });
 
-// creates an endpoint for the route /api/weather
-app.get('/api/weather', (req, res) => {
-  res.json(dataWeather);
-});
-
 // connects to the open weather api 
 app.get("/weather", (request, response) => {
   const city = req.query.cityName;
