@@ -7,7 +7,7 @@ function App() {
   const [city, setCity] = useState("");
   const [result, setResult] = useState(null);
 
-  //A function to do the get request and set the state from the hard code data
+  //A function to do the get request and set the state from openweather api
   const loadCity = (city) => {
     // pass city name as a param 
     const params = new URLSearchParams({ cityName: city });
@@ -21,13 +21,14 @@ function App() {
       });
   }
 
+    // change city value 
     const handleCityChange = (event) => {
     // console.log(event.target.value)
-    // set city value from child 
     setCity(event.target.value);
     // console.log(city);
   }
 
+// loads the city data when submitting 
  const handleSubmit = (e) => {
   e.preventDefault();
   // pass in the city to loadCity to get data from backend 
