@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
   import { faWind } from '@fortawesome/free-solid-svg-icons';
-  import { faDroplet } from '@fortawesome/free-solid-svg-icons'
+  import { faDroplet } from '@fortawesome/free-solid-svg-icons';
+  import { faTemperature0 } from '@fortawesome/free-solid-svg-icons';
 const WeatherCard = ({ data }) => {
   return (
     <div className="weatherCard">
@@ -14,13 +15,11 @@ const WeatherCard = ({ data }) => {
               <p className="nameOfCity">
                 {data.data.name}, {data.data.sys.country}
               </p>
-              <p>
-                Current temperature:{" "}
-                <span>
-                  <strong>
-                    {Math.round(data.data.main.temp)} <sup>o</sup>F
-                  </strong>
-                </span>
+              <p id="temp">
+                {Math.round(data.data.main.temp)}<sup>o</sup>F
+              </p>
+              <p id="desc">
+                {data.data.weather[0].description}
               </p>
               <p>
                 Feels Like{" "}
@@ -43,15 +42,15 @@ const WeatherCard = ({ data }) => {
                 </strong>
               </p>
               <p>
-                Wind: <FontAwesomeIcon icon={faWind} /> {Math.round(data.data.wind.speed)}mph
+                Wind: <FontAwesomeIcon icon={faWind} /> <strong>{Math.round(data.data.wind.speed)} mph</strong>
               </p>
               <p>
-                Humidity: <FontAwesomeIcon icon={faDroplet} /> {Math.round(data.data.wind.speed)}%
+                Humidity: <FontAwesomeIcon icon={faDroplet} /> <strong>{Math.round(data.data.wind.speed)}%</strong>
               </p>
               <div className="weatherIconDiv">
                 <div id="description">
                   <p className="description">
-                    {data.data.weather[0].description}
+                    {/* {data.data.weather[0].description} */}
                   </p>
                 </div>
                 <div id="icon">
