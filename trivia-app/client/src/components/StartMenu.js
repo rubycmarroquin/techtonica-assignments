@@ -1,4 +1,16 @@
 const StartMenu = (props) => {
+    
+  const handleAmount = (e) => {
+    props.setAmount(e.target.value);
+  };
+
+  const handleCategory = (e) => {
+    props.setCategory(e.target.value);
+  };
+
+  const handleDifficulty = (e) => {
+    props.setDifficulty(e.target.value);
+  };
 
   return (
     <div className="StartMenuDiv">
@@ -7,7 +19,9 @@ const StartMenu = (props) => {
         <form>
           <label htmlFor="amount">Select number of questions</label>
           <select onChange={handleAmount} required>
-            <option value="" disabled selected>Choose a value</option>
+            <option value="" disabled selected>
+              Choose a value
+            </option>
             <option value="10">10</option>
             <option value="15">15</option>
             <option value="20">20</option>
@@ -16,7 +30,9 @@ const StartMenu = (props) => {
           <br></br>
           <label htmlFor="category">Select category</label>
           <select onChange={handleCategory}>
-            <option value="" disabled selected>Choose a value</option>
+            <option value="" disabled selected>
+              Choose a value
+            </option>
             <option value="23">History</option>
             <option value="9">General Knowledge</option>
             <option value="19">Mathematics</option>
@@ -25,7 +41,9 @@ const StartMenu = (props) => {
           <br></br>
           <label htmlFor="category">Select difficulty</label>
           <select onChange={handleDifficulty}>
-            <option value="" disabled selected>Choose a value</option>
+            <option value="" disabled selected>
+              Choose a value
+            </option>
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option>
