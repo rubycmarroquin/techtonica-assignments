@@ -1,4 +1,9 @@
 const Question = ({ result, score, setScore }) => {
+  //   console.log("inside the questions comp: ", result);
+  let choices = [result.correct_answer, ...result.incorrect_answers];
+  console.log(choices);
+  const shuffledArray = choices.sort((a, b) => 0.5 - Math.random());
+  //   console.log(shuffledArray);
 
 
   return (
