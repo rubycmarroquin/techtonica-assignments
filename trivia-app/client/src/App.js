@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import StartMenu from "./components/StartMenu";
+import GameScreen from "./components/GameScreen";
 
 function App() {
   const [data, setData] = useState(null);
@@ -19,7 +20,7 @@ function App() {
     fetch(`http://localhost:3001/game?${params}`)
       .then((response) => response.json())
       .then((result) => {
-        console.log("this is the data: ", result);
+        // console.log("this is the data inside loadQuestions(): ", result);
         setData(result);
       });
 
@@ -28,9 +29,9 @@ function App() {
 
   return (
     <div>
-      <h1>Welcome to The Trivia Game</h1>
       {!started ? (
         <>
+          <h1>Welcome to The Trivia Game</h1>
           <StartMenu
             setAmount={setAmount}
             setCategory={setCategory}
@@ -45,10 +46,14 @@ function App() {
           </button>
         </>
       ) : (
-        <h2> Started Game</h2>
+        <>
+          <h1 className="GameStartedHeader">Trivia Game</h1>
+          {data && <GameScreen data={data}/>}
+        </>
       )}
     </div>
   );
 }
 
+// if data evaluates to true, it will render the component on the right - conditional rendering - data is "truthy"
 export default App;
