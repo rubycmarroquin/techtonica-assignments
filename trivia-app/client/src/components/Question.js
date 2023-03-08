@@ -1,0 +1,67 @@
+const Question = ({ result, score, setScore }) => {
+
+
+  return (
+    <div className="QuestionCardDiv">
+      <h2>Question:</h2>
+      <p>{result.question}</p>
+      {result.type === "multiple" ? (
+        <div className="QuestionChoices">
+          <form>
+            <input
+              type="radio"
+              name="answer_choice"
+              value="0"
+              onChange={handleUserChoice}
+            />
+            {shuffledArray[0]} <br></br>
+            <input
+              type="radio"
+              name="answer_choice"
+              value="1"
+              onChange={handleUserChoice}
+            />
+            {shuffledArray[1]}
+            <br></br>
+            <input
+              type="radio"
+              name="answer_choice"
+              value="2"
+              onChange={handleUserChoice}
+            />
+            {shuffledArray[2]} <br></br>
+            <input
+              type="radio"
+              name="answer_choice"
+              value="3"
+              onChange={handleUserChoice}
+            />
+            {shuffledArray[3]}
+          </form>
+        </div>
+      ) : (
+        <div>
+          <h1>not a multiple</h1>
+          <form>
+            <input
+              type="radio"
+              name="answer_choice"
+              value="0"
+              onChange={handleUserChoice}
+            />{" "}
+            {shuffledArray[0]}
+            <input
+              type="radio"
+              name="answer_choice"
+              value="1"
+              onChange={handleUserChoice}
+            />{" "}
+            {shuffledArray[1]}
+          </form>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Question;
