@@ -1,10 +1,12 @@
 const express = require("express");
 const cors = require("cors");
+const bodyparser = require("body-parser")
 
 const PORT = process.env.PORT || 3001;
 
 const app = express();
 app.use(cors());
+app.use(bodyparser.json());
 app.get("/", (req, response) => {
   response.send("I am working!");
 });
