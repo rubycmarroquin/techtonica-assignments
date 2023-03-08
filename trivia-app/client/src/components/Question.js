@@ -1,4 +1,4 @@
-const Question = ({ result, score, setScore }) => {
+const Question = ({ result, score, setScore, questionNum, setQuestionNumber }) => {
   //   console.log("inside the questions comp: ", result);
   let choices = [result.correct_answer, ...result.incorrect_answers];
   console.log(choices);
@@ -7,8 +7,10 @@ const Question = ({ result, score, setScore }) => {
 
   const handleUserChoice = (e) => {
     console.log(e.target.value);
-    if (shuffledArray[e.target.value] === result.correct_answer)
-      setScore(score + 1);
+    if (shuffledArray[e.target.value] === result.correct_answer) setScore(score + 1);
+    setQuestionNumber(questionNum+1);
+    e.target.checked = false;
+      
   };
 
   return (
