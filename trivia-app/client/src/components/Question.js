@@ -5,6 +5,11 @@ const Question = ({ result, score, setScore }) => {
   const shuffledArray = choices.sort((a, b) => 0.5 - Math.random());
   //   console.log(shuffledArray);
 
+  const handleUserChoice = (e) => {
+    console.log(e.target.value);
+    if (shuffledArray[e.target.value] === result.correct_answer)
+      setScore(score + 1);
+  };
 
   return (
     <div className="QuestionCardDiv">
