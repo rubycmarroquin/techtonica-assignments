@@ -28,28 +28,30 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="MainDiv">
       {!started ? (
-        <>
-          <h1>Welcome to The Trivia Game</h1>
+        <div className="MainDivInner">
+          <h1 className="GameTitle">Trivia Game</h1>
           <StartMenu
             setAmount={setAmount}
             setCategory={setCategory}
             setDifficulty={setDifficulty}
           />
-          <button
-            type="button"
-            onClick={loadQuestions}
-            disabled={!amount || !category || !difficulty}
-          >
-            Start Game
-          </button>
-        </>
+            <button
+              className="StartGameButton"
+              type="button"
+              onClick={loadQuestions}
+              disabled={!amount || !category || !difficulty}
+            >
+              <span>Start Game</span>
+            </button>
+        </div>
       ) : (
-        <>
-          <h1 className="GameStartedHeader">Trivia Game</h1>
-          {data && <GameScreen data={data}/>}
-        </>
+        <div className="MainDiv">
+          <div className="GameStartDiv">
+          {data && <GameScreen setStarted={setStarted} data={data} setAmount={setAmount} setCategory={setCategory} setDifficulty={setDifficulty}/>}
+          </div>
+        </div>
       )}
     </div>
   );
