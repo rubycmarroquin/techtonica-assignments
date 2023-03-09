@@ -14,12 +14,14 @@ const StartMenu = (props) => {
 
   return (
     <div className="StartMenuDiv">
-      <h2 className="GameOptionsHeader">Game Options</h2>
+      <div className="GameOptionsHeaderDiv">
+        <h2 className="GameOptionsHeader">Configure your game settings</h2>
+      </div>
       <div className="GameOptionsDiv">
         <form>
-          <label htmlFor="amount">Select number of questions</label>
+          <label htmlFor="amount">Select number of questions<br/></label>
           <select className="DropDownMenu" onChange={handleAmount}>
-            <option value="" disabled selected>
+            <option className="placeholder" value="" disabled selected>
               Choose a value
             </option>
             <option value="10">10</option>
@@ -28,25 +30,25 @@ const StartMenu = (props) => {
             <option value="25">25</option>
           </select>
           <br></br>
-          <label htmlFor="category">Select category</label>
+          <label htmlFor="category">Select category<br/></label>
           <select className="DropDownMenu" onChange={handleCategory}>
-            <option value="" disabled selected>
+            <option className="placeholder" value="" disabled selected>
               Choose a value
             </option>
             <option value="23">History</option>
             <option value="9">General Knowledge</option>
-            <option value="19">Mathematics</option>
+            <option value="31">Japanese Anime & Manga</option>
             <option value="27">Animals</option>
           </select>
           <br></br>
-          <label htmlFor="category">Select difficulty</label>
+          <label htmlFor="category">Select difficulty<br/></label>
           <select className="DropDownMenu" onChange={handleDifficulty}>
-            <option value="" disabled selected>
+            <option className="placeholder" value="" disabled selected>
               Choose a value
             </option>
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
+            <option className="hard" value="hard">Hard</option>
           </select>
         </form>
       </div>
