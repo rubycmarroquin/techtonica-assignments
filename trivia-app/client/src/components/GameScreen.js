@@ -1,32 +1,45 @@
 import Question from "./Question";
 import { useState } from "react";
-// score tracker
-// check whether the user has answered all questions
-// end game if they have
-// continue if they havent
-// want to pass in the data to the question comp
-// in comp want to increment score if user got the question right
 
-const GameScreen = ({ data }) => {
+const GameScreen = ({ data, setStarted, setAmount, setCategory, setDifficulty }) => {
   const [score, setScore] = useState(0);
+  console.log(data);
   const [questionNum, setQuestionNumber] = useState(0);
+  const resetGame = () => {
+    setStarted(false);
+    setAmount(null);
+    setCategory(null);
+    setDifficulty(null);
+  }
 
   return (
-    <div>
+    <div className="GameScreenDiv">
       {questionNum !== data.data.results.length ? (
         <>
           <Question
+            amount={data.data.results.length}
             result={data.data.results[questionNum]}
             score={score}
             setScore={setScore}
             questionNum={questionNum}
             setQuestionNumber={setQuestionNumber}
           />
+          <div className="ScoreDiv">
+            <h2>Current Score: {score}</h2>{" "}
+          </div>
         </>
       ) : (
-        <h1>Game Over</h1>
+        <div className="EndGameScreen">
+          <h1 className="GameOverText">Game Over</h1>
+          <div>
+            <h2>Your final score: {score}/{questionNum}</h2>
+          </div>
+          <div>
+            <h3>Want to play again?</h3>
+            <button className="PlayAgain" type="button" onClick={resetGame}>Play Again</button>
+          </div>
+        </div>
       )}
-    <h1>Your score is: {score}</h1>{" "}
     </div>
   );
 };
