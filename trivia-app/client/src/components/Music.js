@@ -1,11 +1,13 @@
-import MainMenuMusic from '../sounds/MainMenuMusic.mp3';
+import MainMenuMusic from "../sounds/MainMenuMusic.mp3";
 
 const Music = () => {
-    return (
+  return (
     <div>
-        <audio controls><source src={MainMenuMusic}/> Audio not found</audio>
-      </div>
-    )
-}
+      <audio controls>
+        <source src={MainMenuMusic} /> Audio not found
+      </audio>
+    </div>
+  );
+};
 
 export default Music;

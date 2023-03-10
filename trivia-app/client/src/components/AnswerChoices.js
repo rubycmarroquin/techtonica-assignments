@@ -1,4 +1,5 @@
-const MultipleChoice = ({index,  option, handlerUserChoice }) => {
+const AnswerChoices = ({index,  option, handlerUserChoice }) => {
+  
   /** Send user choice back to parent */
   const handleOption = (e) => {
     handlerUserChoice(e); 
@@ -18,4 +19,4 @@ const MultipleChoice = ({index,  option, handlerUserChoice }) => {
   );
 };
 
-export default MultipleChoice;
+export default AnswerChoices;
