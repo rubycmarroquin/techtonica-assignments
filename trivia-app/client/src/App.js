@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import StartMenu from "./components/StartMenu";
 import GameScreen from "./components/GameScreen";
+import Music from "./components/Music";
 
 function App() {
   const [data, setData] = useState(null);
@@ -37,22 +38,32 @@ function App() {
             setCategory={setCategory}
             setDifficulty={setDifficulty}
           />
-            <button
-              className="StartGameButton"
-              type="button"
-              onClick={loadQuestions}
-              disabled={!amount || !category || !difficulty}
-            >
-              <span>Start Game</span>
-            </button>
+          <button
+            className="StartGameButton"
+            type="button"
+            onClick={loadQuestions}
+            disabled={!amount || !category || !difficulty}
+          >
+            Start Game
+          </button>
         </div>
       ) : (
         <div className="MainDiv">
           <div className="GameStartDiv">
-          {data && <GameScreen setStarted={setStarted} data={data} setAmount={setAmount} setCategory={setCategory} setDifficulty={setDifficulty}/>}
+            {data && (
+              <GameScreen
+                setStarted={setStarted}
+                data={data}
+                setAmount={setAmount}
+                setCategory={setCategory}
+                setDifficulty={setDifficulty}
+              />
+            )}
           </div>
         </div>
       )}
+      ;
+      <Music />
     </div>
   );
 }
