@@ -62,7 +62,6 @@ function App() {
           </div>
         </div>
       )}
-      ;
       <Music />
     </div>
   );
