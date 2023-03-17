@@ -1,0 +1,221 @@
+/* Broken Console Font Source: https: //www.cdnfonts.com/broken-console.font */
+@import url("https://fonts.cdnfonts.com/css/broken-console");
+
+.MainDiv {
+  font-family: "Broken Console", sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #010118;
+  min-height: 100vh;
+}
+
+.MainDivInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("https://media.istockphoto.com/id/1140828326/vector/retro-neon-background-with-80s-styled-laser-grid-and-stars.jpg?s=612x612&w=0&k=20&c=wnw0f35ERwayC4TlDo_0sd25b1PHKS4G5ucFD5xTNFo=");
+  width: 800px;
+  height: 570px;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+    rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+    rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+/* blinking arcade text button source: 
+https: //codepen.io/paulnoble/pen/gaPaoY */
+.StartGameButton, .PlayAgain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 90px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 5px;
+  text-shadow: -2px 0 0 #fdff2a, -4px 0 0 #df4a42, 2px 0 0 #91fcfe,
+    4px 0 0 #4405fc;
+}
+
+.StartGameButton:enabled:hover, .PlayAgain:hover {
+  background-color: green;
+}
+
+.StartGameButton:enabled, .PlayAgain{
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #3a3a3a;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin: 20px;
+  animation: blink 1.3s steps(4, start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+.StartGameButton {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #3a3a3a;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.StartGameButton:disabled {
+  opacity: 50%;
+}
+
+/** Start Menu **/
+.GameOptionsDiv {
+  padding: 10px;
+}
+
+.DropDownMenu {
+  text-align: center;
+  height: 35px;
+  margin: 10px;
+  width: 200px;
+  border-radius: 15px;
+  background-color: rgb(250, 250, 250);
+  box-shadow: 2px 4px 8px #c5c5c5;
+  border: none;
+}
+
+input[type="radio"] {
+  height: 20px;
+  width: 20px;
+  padding: 10px;
+}
+
+input[type="radio"]:hover:before {
+  box-shadow: 0px 0px 0px 12px rgba(80, 80, 200, 0.2);
+  border-radius: 50%;
+  opacity: 1;
+}
+
+input[type="radio"]:before {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 60%;
+  margin: 10%;
+  /* Keeping margin only 10% */
+  padding: 10%;
+  /* Increase the inner area for pushing the border out of the circle */
+  border-radius: 50%;
+  transition: 0.3s;
+  /* Move your transition to here */
+}
+
+.GameScreenDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.GameStartDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("https://media.istockphoto.com/id/1140828326/vector/retro-neon-background-with-80s-styled-laser-grid-and-stars.jpg?s=612x612&w=0&k=20&c=wnw0f35ERwayC4TlDo_0sd25b1PHKS4G5ucFD5xTNFo=");
+  width: 800px;
+  height: 500px;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+    rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+    rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+/* Source: making radio buttons look like buttons 
+https: //markheath.net/post/customize-radio-button-css */
+.RadioButton label:hover {
+  background-color: rgb(158, 73, 232);
+  cursor: pointer;
+}
+
+.RadioButton input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.RadioButton label {
+  width: 300px;
+  display: inline-block;
+  background-color: #094bcf;
+  padding: 10px 20px;
+  margin: 5px;
+  font-family: sans-serif, Arial;
+  font-size: 16px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 20px;
+}
+
+.RadioButton input[type="radio"]:checked + label {
+  background-color: #bfb;
+  border-color: #4c4;
+}
+
+.GameTitle,
+.GameOverText {
+  justify-content: center;
+  width: 500px;
+  height: 40px;
+  align-items: center;
+  padding-top: 20px;
+}
+
+/* source: Making text look like a neon sign 
+https: //codepen.io/silvia-odwyer/pen/RwKMOpb */
+.GameTitle,
+.GameOverText {
+  color: #efefef;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #bc13fe,
+    0 0 82px #bc13fe, 0 0 92px #bc13fe, 0 0 102px #bc13fe, 0 0 151px #bc13fe;
+}
+
+h1 {
+  font-size: 3.2rem;
+  animation: pulsate 1.5s infinite alternate;
+  border: 0.2rem solid #fff;
+  border-radius: 2rem;
+  padding: 0.4em;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+}
+
+@keyframes pulsate {
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #bc13fe,
+      0 0 80px #bc13fe, 0 0 90px #bc13fe, 0 0 100px #bc13fe, 0 0 150px #bc13fe;
+  }
+
+  0% {
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe,
+      0 0 45px #bc13fe, 0 0 55px #bc13fe, 0 0 70px #bc13fe, 0 0 80px #bc13fe;
+  }
+}
